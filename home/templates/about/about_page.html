@@ -1,0 +1,483 @@
+{% extends 'layout.html' %}
+{% load wagtailcore_tags  wagtailimages_tags  %}
+
+{% load static %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="auto-container">
+<div class="row clearfix">
+<div class="page-detail index-page-detail">
+<div class="content-inner">
+<div class="text">
+<div id="post-1053" class="post-1053 page type-page status-publish hentry">
+<div class="entry-content">
+<div data-elementor-type="wp-post" data-elementor-id="1053" class="elementor elementor-1053" data-elementor-settings="[]">
+<div class="elementor-inner">
+<div class="elementor-section-wrap">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-49610c0 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="49610c0" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2cc6357" data-id="2cc6357" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-7f22e03 elementor-widget elementor-widget-page_about" data-id="7f22e03" data-element_type="widget" data-widget_type="page_about.default">
+<div class="elementor-widget-container">
+
+<section class="about-section-two" style="background-image:url();">
+<div class="auto-container">
+<div class="title-style-one style-two centered">
+{% if page.logo %}
+  {% image page.logo fill-40x30 as logo %}
+<div class="icon"><img src="{{logo.url}}" alt="Image"></div>
+{% endif %}
+<div class="subtitle"></div>
+<h2>{{self.page_title|richtext}}</h2>
+<div class="text">{{self.page_text|richtext}}</div>
+</div>
+<div class="row">
+<div class="image-column col-lg-6 col-md-12 col-sm-12">
+<div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+<figure class="image"><a href="" class="lightbox-image">
+{% if page.content_photo %}
+  {% image page.content_photo fill-450x680 as c_photo %}
+ <img src="{{c_photo.url}}" alt="Image">
+ {% endif %}
+</a>
+</figure>
+</div>
+</div>
+<div class="content-column col-lg-6 col-md-12 col-sm-12">
+<div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+<div class="text">
+<p><strong>{{self.content_title|richtext}}</strong></p>
+<p>{{self.content_text|richtext}}</p> </div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-54728ca elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="54728ca" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-ba1ce7b" data-id="ba1ce7b" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-4b41574 elementor-widget elementor-widget-mission" data-id="4b41574" data-element_type="widget" data-widget_type="mission.default">
+<div class="elementor-widget-container">
+
+<section class="mission-section" style="background-image: url(../wp-content/uploads/2020/06/mission-bg.jpg);">
+<div class="auto-container">
+<div class="row no-gutters">
+<div class="colum col-lg-6 col-md-12 col-sm-12">
+<div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+<div class="content-box" style="background-image: url();">
+<h4>{{self.mid_content_title1|richtext}}</h4>
+<div class="text">{{self.mid_content_text1|richtext}}</div>
+</div>
+<div class="image-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+{% if page.mid_content_photo2 %}
+{% image page.mid_content_photo2 fill-585x298 as m_c_photo1 %}
+<figure class="image"><a href="{{m_c_photo1.url}}" class="lightbox-image">
+{% endif %}
+{% if page.mid_content_photo2 %}
+{% image page.mid_content_photo2 fill-585x298 as m_c_photo1 %}
+<img src="{{m_c_photo1.url}}" alt="Image">
+{% endif %}
+</a>
+</figure>
+</div>
+</div>
+</div>
+<div class="colum right-column col-lg-6 col-md-12 col-sm-12">
+<div class="inner-column">
+<div class="image-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+{% if page.mid_content_photo1 %}
+{% image page.mid_content_photo1 fill-585x298 as m_c_photo %}
+<figure class="image"><a href="{{m_c_photo.url}}" class="lightbox-image">
+{% endif %}
+{% if page.mid_content_photo1 %}
+{% image page.mid_content_photo1 fill-585x298 as m_c_photo %}
+<img src="{{m_c_photo.url}}" alt="Image">
+{% endif %}
+</a>
+</figure>
+</div>
+<div class="content-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms" style="background-image: url(../wp-content/uploads/2020/06/logo-icon-2.png);">
+<h4>{{self.mid_content_title2|richtext}}</h4>
+<div class="text">{{self.mid_content_text2|richtext}}</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-7660d89 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="7660d89" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7da0454" data-id="7da0454" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-83fb7dc elementor-widget elementor-widget-quote" data-id="83fb7dc" data-element_type="widget" data-widget_type="quote.default">
+<div class="elementor-widget-container">
+
+<section class="quote-section wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+<div class="auto-container">
+<div class="inner-section">
+<div class="clearfix">
+<div class="pull-left">
+<div class="content">
+{% if page.banner_image %}
+{% image page.banner_image fill-50x50 as ban_photo %}
+<img src="{{ban_photo.url}}" 
+{% endif %}
+</div>
+<h3>{{self.banner_title|richtext}}</h3>
+<div class="text">{{self.banner_text|richtext}}</div>
+</div>
+</div>
+<div class="pull-right">
+<a href="{% slugurl 'contact'%}" class="theme-btn btn-style-three">Contact Us</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-102cc88 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="102cc88" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0e9cbbe" data-id="0e9cbbe" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-c38da3b elementor-widget elementor-widget-faqs2" data-id="c38da3b" data-element_type="widget" data-widget_type="faqs2.default">
+<div class="elementor-widget-container">
+
+<section class="faq-section">
+<div class="auto-container">
+<div class="row">
+
+<div class="accordion-column col-lg-7 col-md-12 col-sm-12">
+<div class="inner-column">
+<div class="title-style-one">
+<div class="icon">
+{% if page.logo %}
+  {% image page.logo fill-40x30 as logo %}
+<img src="{{logo.url}}" alt="Image" />
+{% endif %}
+</div>
+<div class="subtitle"></div>
+<h2>{{self.bot_content_title|richtext}}</h2>
+</div>
+
+<ul class="accordion-box">
+
+<li class="accordion block  wow fadeInUp">
+<div class="acc-btn ">
+<div class="icon-outer"><span class="icon icon-plus fa fa-angle-right"></span> </div>
+{{self.bot_content_title_dropdown1|richtext}} </div>
+<div class="acc-content ">
+<div class="content">
+<div class="text">{{self.bot_content_text_dropdown1|richtext}}</div>
+</div>
+</div>
+</li>
+
+<li class="accordion block active-block wow fadeInUp">
+<div class="acc-btn active">
+<div class="icon-outer"><span class="icon icon-plus fa fa-angle-right"></span> </div>
+{{self.bot_content_title_dropdown2|richtext}}</div>
+<div class="acc-content current">
+<div class="content">
+<div class="text">{{self.bot_content_text_dropdown2|richtext}}</div>
+</div>
+</div>
+</li>
+
+<li class="accordion block  wow fadeInUp">
+<div class="acc-btn active">
+<div class="icon-outer"><span class="icon icon-plus fa fa-angle-right"></span> </div>
+{{self.bot_content_title_dropdown3|richtext}}</div>
+<div class="acc-content ">
+<div class="content">
+<div class="text">{{self.bot_content_text_dropdown3|richtext}}</div>
+</div>
+</div>
+</li>
+
+<li class="accordion block  wow fadeInUp">
+<div class="acc-btn ">
+<div class="icon-outer"><span class="icon icon-plus fa fa-angle-right"></span> </div>
+{{self.bot_content_title_dropdown4|richtext}} </div>
+<div class="acc-content ">
+<div class="content">
+<div class="text">{{self.bot_content_text_dropdown4|richtext}}</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="image-column col-lg-5 col-md-12 col-sm-12">
+<div class="inner-column">
+<figure class="image wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+{% if page.bot_content_photo %}
+{% image page.bot_content_photo fill-450x690 as bot_photo %}
+<img src="{{bot_photo.url}}" alt="Image" />
+{% endif %}
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+{% comment %} <section class="elementor-section elementor-top-section elementor-element elementor-element-a46f43b elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="a46f43b" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9342a7f" data-id="9342a7f" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-3cc1301 elementor-widget elementor-widget-pagefeatureblock" data-id="3cc1301" data-element_type="widget" data-widget_type="pagefeatureblock.default">
+<div class="elementor-widget-container">
+
+<section class="featured-services">
+<div class="row no-gutters">
+
+<div class="feature-block-five col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms">
+<div class="inner-box" style="background-image: url(../wp-content/uploads/2020/07/featured-bg-1.jpg);">
+<div class="content">
+<div class="icon-box"><span class="icon icon flaticon-engineer-2"></span></div>
+<h4><a href="#">Experts Engineers Support</a></h4>
+<div class="text">Aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate sed velit sunt in culpa qui officia deseru mollit anim ipsum id est laborum.</div>
+</div>
+</div>
+</div>
+
+<div class="feature-block-five col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms">
+<div class="inner-box" style="background-image: url(../wp-content/uploads/2020/06/featured-bg-2.jpg);">
+<div class="content">
+<div class="icon-box"><span class="icon icon flaticon-earth-globe"></span></div>
+<h4><a href="#">Well Maintained Services</a></h4>
+<div class="text">Aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate sed velit sunt in culpa qui officia deseru mollit anim ipsum id est laborum.</div>
+</div>
+</div>
+</div>
+
+<div class="feature-block-five col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms">
+<div class="inner-box" style="background-image: url(../wp-content/uploads/2020/07/featured-bg-3.jpg);">
+<div class="content">
+<div class="icon-box"><span class="icon icon flaticon-flask"></span></div>
+<h4><a href="#">Modern Research Ideology</a></h4>
+<div class="text">Aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit voluptate sed velit sunt in culpa qui officia deseru mollit anim ipsum id est laborum.</div>
+</div>
+</div>
+</div>
+</div>
+</section> {% endcomment %}
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-2d42af3 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="2d42af3" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0feabee" data-id="0feabee" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-ad1ec24 elementor-widget elementor-widget-team_member" data-id="ad1ec24" data-element_type="widget" data-widget_type="team_member.default">
+<div class="elementor-widget-container">
+
+<section class="team-section">
+<div class="auto-container">
+
+<div class="sec-title centered">
+<div class="title">
+</div>
+<h2>
+{{self.director_board_title|richtext}}</h2>
+</div>
+<div class="row">
+
+<div class="team-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms">
+<div class="inner-box">
+<div class="image-box">
+<figure class="image">
+{% if page.first_board_member_photo  %}
+{% image page.first_board_member_photo  fill-268x237 as photo1 %}
+<img src="{{photo1.url}}" alt="Image">
+{% endif %}
+</a>
+</figure>
+</div>
+<div class="lower-content"> 
+<h3 class="name">{{self.board_member_text1|richtext}}</h3>
+{% comment %} <span class="designation">Director &amp; CEO</span> {% endcomment %}
+{% comment %} <a class="arrow" href="#"><span class="icon flaticon-next"></span></a> {% endcomment %}
+</div>
+</div>
+</div>
+
+<div class="team-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
+<div class="inner-box">
+<div class="image-box">
+<figure class="image">
+{% if page.second_board_member_photo  %}
+{% image page.second_board_member_photo  fill-268x237 as photo2 %}
+<img src="{{photo2.url}}" alt="Image">
+{% endif %}
+</a>
+</figure>
+</div>
+<div class="lower-content">
+<h3 class="name">{{self.board_member_text2|richtext}}</h3>
+{% comment %} <span class="designation">Senior Director</span> {% endcomment %}
+{% comment %} <a class="arrow" href="#"><span class="icon flaticon-next"></span></a> {% endcomment %}
+</div>
+</div>
+</div>
+
+<div class="team-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="600ms">
+<div class="inner-box">
+<div class="image-box">
+<figure class="image">
+
+{% if page.third_board_member_photo  %}
+{% image page.third_board_member_photo  fill-268x237 as photo3 %}
+<img src="{{photo3.url}}" alt="Image">
+{% endif %}</a>
+</figure>
+</div>
+<div class="lower-content">
+<h3 class="name">{{self.board_member_text3|richtext}}</h3>
+{% comment %} <span class="designation">HR Manager</span> {% endcomment %}
+{% comment %} <a class="arrow" href="#"><span class="icon flaticon-next"></span></a> {% endcomment %}
+</div>
+</div>
+</div>
+
+<div class="team-block col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="900ms">
+<div class="inner-box">
+<div class="image-box">
+<figure class="image">
+
+{% if page.fourth_board_member_photo  %}
+{% image page.fourth_board_member_photo  fill-268x237 as photo4 %}
+<img src="{{photo4.url}}" alt="Image">
+{% endif %}</a>
+</figure>
+</div>
+<div class="lower-content">
+<h3 class="name">{{ self.board_member_text4|richtext}}</h3>
+{% comment %} <span class="designation">Director &amp; CEO</span> {% endcomment %}
+{% comment %} <a class="arrow" href="#"><span class="icon flaticon-next"></span></a> {% endcomment %}
+</div>
+</div>
+ </div>
+</div>
+</div>
+</section>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-429ebae elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="429ebae" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-050ea02" data-id="050ea02" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-fed20ee elementor-widget elementor-widget-newsletter" data-id="fed20ee" data-element_type="widget" data-widget_type="newsletter.default">
+<div class="elementor-widget-container">
+
+{% comment %} <section class="newsletter-section wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+<div class="auto-container">
+<div class="inner-container">
+<div class="row clearfix">
+
+<div class="title-column col-lg-6 col-md-12 col-sm-12">
+<div class="inner-column">
+<h2>
+Stay Updated With Our Newsletter </h2>
+</div>
+</div>
+
+<div class="form-column col-lg-6 col-md-12 col-sm-12">
+<div class="inner-column">
+
+<div class="subscribe-form">
+<form action="#" method="post" class="wpcf7-form" novalidate="novalidate">
+<div class="form-group">
+<span class="icon far fa-envelope"></span>
+<input type="email" name="your-email" value="" placeholder="Email address ..." required>
+<button type="submit" class="theme-btn submit-btn">Submit</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section> {% endcomment %}
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

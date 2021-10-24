@@ -1,0 +1,115 @@
+.page .comment-respond .form-submit {
+    margin-bottom: 0!important
+}
+
+.main-footer {
+    margin-top: 90px
+}
+
+.page .custom-comment-margin {
+    margin-top: 15px;
+    margin-bottom: 0
+}
+
+.sidebar-page-container {
+    padding-bottom: 0
+}
+
+.sidebar-page-container .content-side,
+.sidebar-page-container .sidebar-side {
+    margin-bottom: 0
+}
+
+.sidebar-widget:last-child {
+    margin-bottom: 0
+}
+
+.page .comment-reply-title {
+    margin-top: 0
+}
+
+.logged-in-as {
+    margin-bottom: 5px
+}
+
+.index-page-detail .group-title span {
+    position: relative;
+    font-size: 21px;
+    color: #001e57;
+    font-weight: 500;
+    padding-bottom: 12px;
+    text-transform: capitalize
+}
+
+.index-page-detail .group-title span:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 1px;
+    background-color: #001e57
+}
+
+.index-page-detail .group-title span:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 120px;
+    height: 1px;
+    background-color: #df6512
+}
+
+.page .type-page .page-links {
+    margin-bottom: 0
+}
+
+.page .comments-area-custom {
+    margin-bottom: 0
+}
+
+.page .index-page-detail .comments-area {
+    margin-bottom: 0
+}
+
+.page .comment-list .comment-respond {
+    margin-bottom: 40px
+}
+
+.page .comment-list .comment-reply-title .group-title {
+    margin-bottom: 0
+}
+
+.main-header .header-upper .logo-outer {
+    padding: 38px 0
+}
+
+.single-post .custom-comment-margin .form-submit {
+    margin-bottom: 0
+}
+
+.single-post .custom-comment-margin {
+    margin-bottom: 0
+}
+
+.sidebar-page-container .group-title {
+    margin-bottom: 20px
+}
+
+.blog-detail .inner-box .lower-content .content-inner .title-box h2 {
+    margin-bottom: 0
+}
+
+abbr[title],
+abbr[data-original-title] {
+    cursor: help;
+    border-bottom: 1px dotted #777
+}
+
+.error404 footer.main-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%
+}
