@@ -1,0 +1,34 @@
+*.swp
+*.pyc
+.DS_Store
+/.coverage
+/dist/
+/build/
+/MANIFEST
+/wagtail.egg-info/
+/docs/_build/
+/.tox/
+/node_modules/
+npm-debug.log*
+*.idea/
+/*.egg/
+/.cache/
+/.pytest_cache/
+/storybook-static
+.env
+.venv
+env/
+venv/
+ENV/
+
+### JetBrains
+.idea/
+*.iml
+*.ipr
+*.iws
+coverage/
+client/node_modules
+
+### vscode
+.vscode
+
