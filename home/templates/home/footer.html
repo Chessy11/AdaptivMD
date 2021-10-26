@@ -29,13 +29,20 @@
 </a>
 </div>
 
-<div id="custom_html-4" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"> <div class="text"></div>
-<a href="{% slugurl 'about' %}" class="theme-btn btn-style-four">About Us</a></div></div> </div>
+<div id="custom_html-4" class="widget_text widget widget_custom_html">
+<div class="textwidget custom-html-widget"> <div class="text">
+</div>
+<a href="{% slugurl 'about' %}" class="theme-btn btn-style-four">About Us</a>
+</div>
+</div> 
+</div>
 </div>
 <ul>
 {% for item in navigations.menu_items.all %}
 
-<a title="" href="{{ item.link }}" class="nav-link">{{ item.title }}</a></li>
+<a title="" href="{{ item.link }}" class="nav-link">{{ item.title }}
+</a>
+</li>
 </ul>
 {% endfor %}
 
@@ -69,8 +76,7 @@
 <div class="footer-bottom">
 <div class="clearfix">
 <div class="text-center">
-<div class="copyright">
-&copy; 2021 AdaptivMD. All rights reserved </div>
+<div class="copyright">&copy; 2021 AdaptivMD. All rights reserved </div>
 </div>
 <div class="pull-right">
 </div>
