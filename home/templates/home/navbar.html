@@ -239,7 +239,11 @@ src="https://www.facebook.com/tr?id=1350683678613106&amp;ev=PageView&amp;noscrip
                                                                                                                                                                                                                              {% endif %}
                                                                                                                                                                                                                              </li>
                                                                                                                                                                                                                              </ul> {% endcomment %}
+{% if request.user.is_authenticated %}
+<li><button> <a href="{% url 'account_logout' %}"type="button" class="btn mb-2 mb-md-0 btn-secondary btn-block btn-round">Logout</a></button>
+{% else %}
 <li><button> <a href="{% url 'account_login' %}"type="button" class="btn mb-2 mb-md-0 btn-secondary btn-block btn-round">Login</a></button>
+{% endif %}
 <li><button> <a href="{% slugurl 'contact'%}" type="button" class="btn mb-2 mb-md-0 btn-primary btn-block btn-round">Request For A Demo</a></button>
 
 <ul class="dropdown-menu" role="menu">
