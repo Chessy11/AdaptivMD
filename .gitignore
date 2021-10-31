@@ -8,6 +8,8 @@
 /wagtail.egg-info/
 /docs/_build/
 /.tox/
+/.venv
+/venv
 /node_modules/
 npm-debug.log*
 *.idea/
@@ -15,11 +17,6 @@ npm-debug.log*
 /.cache/
 /.pytest_cache/
 /storybook-static
-.env
-.venv
-env/
-venv/
-ENV/
 
 ### JetBrains
 .idea/
@@ -31,4 +28,3 @@ client/node_modules
 
 ### vscode
 .vscode
-

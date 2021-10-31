@@ -290,6 +290,21 @@ li {
     text-transform: capitalize
 }
 
+.btn-style-new {
+    position: relative!important;
+    display: block!important;
+    font-size: 16px !important;
+    padding: 0!important;
+    background: #edeff5 !important;
+    color: #656568 !important;
+    cursor: pointer !important;
+    transition: all .15s ease;
+}
+
+.btn-style-new:hover {
+    color: #fff
+}
+
 .btn-style-three:hover {
     background-color: #001e57;
     color: #fff
@@ -9631,11 +9646,16 @@ p.has-very-light-gray-color {
 }
 
 .content-inner h2 {
-    font-size: 34px;
+    /* font-size: 34px;
     line-height: 44px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     font-weight: 800;
-    color: #222
+    color: rgb(241, 241, 241) */
+    font-size: 28px;
+    line-height: 100px!important;
+    font-weight: 600;
+    margin-bottom: 5px!important;
+    color: rgb(255, 255, 255)
 }
 
 .content-inner h3 {
@@ -10381,7 +10401,7 @@ a.post-edit-link:hover {
 
 .index-page-detail .text p {
     position: relative;
-    color: #555;
+    color: rgb(207, 206, 206);
     font-size: 16px;
     line-height: 1.8em;
     margin-bottom: 22px

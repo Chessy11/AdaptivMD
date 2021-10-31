@@ -228,16 +228,20 @@ src="https://www.facebook.com/tr?id=1350683678613106&amp;ev=PageView&amp;noscrip
 
 {% endfor %}
 
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-2880" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2880 nav-item"><a title="" href="{% slugurl 'home' %}" class="nav-link">{% if request.user.is_authenticated %}
+{% comment %} <a id="cta_button_6016048_7cb19244-8f7b-4186-be75-747cb768e933" class="cta_button login" href="https://www.prevounce.com/cs/c/?cta_guid=7cb19244-8f7b-4186-be75-747cb768e933&amp;signature=AAH58kHR73XVxF8al1rwWHkFSgMmE9G2Eg&amp;pageId=15185321950&amp;placement_guid=185523e3-e614-47d8-8a02-22412658c607&amp;click=0605b31d-346d-4e23-ba54-9f9fea209136&amp;hsutk=b631d2b1487e11af4911bb5dff3c5c61&amp;canon=https%3A%2F%2Fwww.prevounce.com%2F&amp;portal_id=6016048&amp;redirect_url=APefjpFVOi6awW8gF_jzXhoNk4ZXBdKCRLR9nkvmugSxlCuhEgOQ5NKSGzv7rYCw7sKieZRbDpNaoWp_EpG_swo3oHwxvLCLSyRSs6HatmIG-HEFEDZSOp8&amp;__hstc=181802808.b631d2b1487e11af4911bb5dff3c5c61.1635706048347.1635706048347.1635706048347.1&amp;__hssc=181802808.1.1635706048348&amp;__hsfp=736214119&amp;contentType=standard-page" target="_blank" style="" cta_dest_link="https://app.prevounce.com" title="Login">Login</a> {% endcomment %}
+{% comment %} <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-2880" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2880 nav-item"><a title="" href="{% slugurl 'home' %}" class="nav-link">{% if request.user.is_authenticated %}
                                                                                                                                                                                                                             <p style ="color:#FFA07A;">Welcome To AdaptivMD  {{ request.user.username }}</p> 
                                                                                                                                                                                                                            
                                                                                                                                                                                                                              <a href="{% url 'account_logout' %}" class="nav-link">Logout</a>
                                                                                                                                                                                                                              {% else %}
-                                                                                                                                                                                                                             <p style ="color:#FFA07A;">Do You Want To Join Us?</p>
+                                                                                                                                                                                                                          
                                                                                                                                                                                                                              <a href ="{% url 'account_login' %}" class ="nav-link">Login</a>
                                                                                                                                                                                                                              {% endif %}
                                                                                                                                                                                                                              </li>
-                                                                                                                                                                                                                             </ul>
+                                                                                                                                                                                                                             </ul> {% endcomment %}
+<li><button> <a href="{% url 'account_login' %}"type="button" class="btn mb-2 mb-md-0 btn-secondary btn-block btn-round">Login</a></button>
+<li><button> <a href="{% slugurl 'contact'%}" type="button" class="btn mb-2 mb-md-0 btn-primary btn-block btn-round">Request For A Demo</a></button>
+
 <ul class="dropdown-menu" role="menu">
 <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-2906" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2906 nav-item"><a title="Services Version 01" href="../../services-version-01/index.html">Services Version 01</a></li>
 <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-2905" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2905 nav-item"><a title="Services Version 02" href="../../services-version-02/index.html">Services Version 02</a></li>
@@ -261,6 +265,7 @@ src="https://www.facebook.com/tr?id=1350683678613106&amp;ev=PageView&amp;noscrip
 <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-2890" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2890 nav-item"><a title="Blog Details" href="../../2019/03/28/eco-help-reduce-emissions-for-the-global-world/index.html">Blog Details</a></li>
 </ul>
 </li>
+
 </ul></div> </nav>
 
 
