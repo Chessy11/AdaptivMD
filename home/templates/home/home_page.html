@@ -17,7 +17,6 @@
 {% block content %}
 
 
-<div class="auto-container">
 <div class="row clearfix">
 <div class="page-detail index-page-detail">
 <div class="content-inner">
@@ -255,7 +254,7 @@
 <div class="elementor-element elementor-element-84a1ee7 elementor-widget elementor-widget-services" data-id="84a1ee7" data-element_type="widget" data-widget_type="services.default">
 <div class="elementor-widget-container">
 
-<section class="services-section ">
+{% comment %} <section class="services-section ">
 <div class="auto-container">
 <div class="row clearfix">
 
@@ -318,7 +317,130 @@
 <div class="text">
 {{self.fourth_card_text|richtext}}</div>
 
-</section>
+</section>  {% endcomment %}
+
+{% comment %} Starts here {% endcomment %}
+<div class="auto-container">
+
+ <div class="fusion-fullwidth fullwidth-box fusion-builder-row-6 fusion-flex-container hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-color: rgba(255,255,255,0);background-position: right center;background-repeat: no-repeat;border-width: 0px 0px 0px 0px;border-color:#eae9e9;border-style:solid;">
+<div class="fusion-builder-row fusion-row fusion-flex-align-items-stretch" style="width:104% !important;max-width:104% !important;margin-left: calc(-4% / 2 );margin-right: calc(-4% / 2 );">
+<div class="fusion-layout-column fusion_builder_column fusion-builder-column-6 fusion_builder_column_1_1 1_1 fusion-flex-column"><div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column" style="background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;padding: 0px 0px 0px 0px;">
+<div class="fusion-builder-row fusion-row fusion-flex-align-items-stretch" style="width:104% !important;max-width:104% !important;margin-left: calc(-4% / 2 );margin-right: calc(-4% / 2 );">
+
+<div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column" style="background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;padding: 0px 0px 0px 0px;">
+<div class="fusion-flip-boxes flip-boxes row fusion-columns-4 flip-effect-classic">
+<div class="fusion-flip-box-wrapper fusion-column col-lg-3 col-md-3 col-sm-3"><div class="fusion-flip-box flip-right" tabindex="0">
+<div class="flip-box-inner-wrapper">
+<div class="flip-box-front" style="background-color:#f5f5f5;border-color:rgba(255,255,255,0);border-radius:10px;border-style:solid;border-width:1px;color:#747474;transition-duration:0.4s;"><div class="flip-box-front-inner"><div class="flip-box-grafix flip-box-circle">
+{% if page.card_photo1 %}
+{% image page.card_photo1 fill-128x128 as card_photo1 %}
+<i aria-hidden="true" class="constructionbuilding-regular"><img src="{{ card_photo1.url }}"></i>
+</div>
+{% endif %}
+
+<h2 class="flip-box-heading" style="color:#333333;">{{ self.first_card_title|richtext}}</h2>
+{{ self.first_card_text|richtext }}</div>
+</div>
+
+<div class="flip-box-back" style="background-color:#fed03d;border-color:rgba(255,255,255,0);border-radius:10px;border-style:solid;border-width:1px;color:#555555;transition-duration:0.4s;">
+<div class="flip-box-back-inner">
+<h3 class="flip-box-heading-back" style="color:#333333;">{{self.first_card_title|richtext}}</h3>
+{{self.first_card_text|richtext}}
+<div style="text-align:center;"><style>.fusion-button.button-4 .fusion-button-text,.fusion-button.button-4 i{color:#333333;}.fusion-button.button-4{border-color:#333333;border-radius:0px 0px 0px 0px;background:#ffe07b;}.fusion-button.button-4:hover .fusion-button-text,.fusion-button.button-4:hover i,.fusion-button.button-4:focus .fusion-button-text,.fusion-button.button-4:focus i,.fusion-button.button-4:active .fusion-button-text,.fusion-button.button-4:active i{color:#ffffff;}.fusion-button.button-4:hover,.fusion-button.button-4:active,.fusion-button.button-4:focus{border-color:#ffffff;background:#333333;}</style><a class="fusion-button button-flat fusion-button-default-size button-custom button-4 fusion-button-default-span fusion-button-default-type" target="_self" href="get-quote/index.html"><span class="fusion-button-text">Get A Quote</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fusion-flip-box-wrapper fusion-column col-lg-3 col-md-3 col-sm-3">
+<div class="fusion-flip-box flip-right" tabindex="0">
+<div class="flip-box-inner-wrapper">
+<div class="flip-box-front" style="background-color:#f5f5f5;border-color:rgba(255,255,255,0);border-radius:10px;border-style:solid;border-width:1px;color:#747474;transition-duration:0.4s;">
+<div class="flip-box-front-inner">
+<div class="flip-box-grafix flip-box-circle">
+{% if page.card_photo2 %}
+{% image page.card_photo2 fill-128x128 as card_photo2 %}
+<i aria-hidden="true" class="constructionsync-solid"><img src="{{ card_photo2.url }}"></i>
+{% endif %}
+</div>
+<h2 class="flip-box-heading" style="color:#333333;">{{self.second_card_title|richtext}}</h2>
+{{self.second_card_text|richtext}}</div>
+</div>
+<div class="flip-box-back" style="background-color:#fed03d;border-color:rgba(255,255,255,0);border-radius:10px;border-style:solid;border-width:1px;color:#555555;transition-duration:0.4s;">
+<div class="flip-box-back-inner">
+<h3 class="flip-box-heading-back" style="color:#333333;">{{self.second_card_title|richtext}}</h3>
+{{self.second_card_text|richtext}}
+<div style="text-align:center;">
+<style>.fusion-button.button-5 .fusion-button-text,.fusion-button.button-5 i{color:#333333;}.fusion-button.button-5{border-color:#333333;border-radius:0px 0px 0px 0px;background:#ffe07b;}.fusion-button.button-5:hover .fusion-button-text,.fusion-button.button-5:hover i,.fusion-button.button-5:focus .fusion-button-text,.fusion-button.button-5:focus i,.fusion-button.button-5:active .fusion-button-text,.fusion-button.button-5:active i{color:#ffffff;}.fusion-button.button-5:hover,.fusion-button.button-5:active,.fusion-button.button-5:focus{border-color:#ffffff;background:#333333;}</style>
+<a class="fusion-button button-flat fusion-button-default-size button-custom button-5 fusion-button-default-span fusion-button-default-type" target="_self" href="get-quote/index.html"><span class="fusion-button-text">Get A Quote</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fusion-flip-box-wrapper fusion-column col-lg-3 col-md-3 col-sm-3">
+<div class="fusion-flip-box flip-right" tabindex="0">
+<div class="flip-box-inner-wrapper">
+<div class="flip-box-front" style="background-color:#f5f5f5;border-color:rgba(255,255,255,0);border-radius:10px;border-style:solid;border-width:1px;color:#747474;transition-duration:0.4s;">
+<div class="flip-box-front-inner">
+<div class="flip-box-grafix flip-box-circle">
+{% if page.card_photo3 %}
+{% image page.card_photo3 fill-128x128 as card_photo3 %}
+<i aria-hidden="true" class="constructionhome-solid"><img src="{{ card_photo3.url }}"></i>
+{% endif %}
+</div>
+<h2 class="flip-box-heading" style="color:#333333;">{{self.third_card_title|richtext}}</h2>
+{{self.third_card_text|richtext}}
+</div>
+</div>
+<div class="flip-box-back" style="background-color:#fed03d;border-color:rgba(255,255,255,0);border-radius:10px;border-style:solid;border-width:1px;color:#555555;transition-duration:0.4s;">
+<div class="flip-box-back-inner">
+<h3 class="flip-box-heading-back" style="color:#333333;">{{ self.third_card_title|richtext}}</h3>
+{{self.third_card_text|richtext}}
+<div style="text-align:center;"><style>.fusion-button.button-6 .fusion-button-text,.fusion-button.button-6 i{color:#333333;}.fusion-button.button-6{border-color:#333333;border-radius:0px 0px 0px 0px;background:#ffe07b;}.fusion-button.button-6:hover .fusion-button-text,.fusion-button.button-6:hover i,.fusion-button.button-6:focus .fusion-button-text,.fusion-button.button-6:focus i,.fusion-button.button-6:active .fusion-button-text,.fusion-button.button-6:active i{color:#ffffff;}.fusion-button.button-6:hover,.fusion-button.button-6:active,.fusion-button.button-6:focus{border-color:#ffffff;background:#333333;}</style>
+<a class="fusion-button button-flat fusion-button-default-size button-custom button-6 fusion-button-default-span fusion-button-default-type" target="_self" href="get-quote/index.html"><span class="fusion-button-text">Get A Quote</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fusion-flip-box-wrapper fusion-column col-lg-3 col-md-3 col-sm-3">
+<div class="fusion-flip-box flip-right" tabindex="0">
+<div class="flip-box-inner-wrapper">
+<div class="flip-box-front" style="background-color:#f5f5f5;border-color:rgba(255,255,255,0);border-radius:10px;border-style:solid;border-width:1px;color:#747474;transition-duration:0.4s;">
+<div class="flip-box-front-inner">
+<div class="flip-box-grafix flip-box-circle">
+{% if page.card_photo4 %}
+{% image page.card_photo4 fill-128x128 as card_photo4 %}
+<i aria-hidden="true" class="constructiontruck-solid"><img src="{{ card_photo4.url }}"></i>
+{% endif %}
+</div>
+<h2 class="flip-box-heading" style="color:#333333;">{{ self.fourth_card_title|richtext }}</h2>
+{{self.fourth_card_text|richtext}}
+</div>
+</div>
+<div class="flip-box-back" style="background-color:#fed03d;border-color:rgba(255,255,255,0);border-radius:10px;border-style:solid;border-width:1px;color:#555555;transition-duration:0.4s;">
+<div class="flip-box-back-inner">
+
+<h3 class="flip-box-heading-back" style="color:#333333;">{{ self.fourth_card_title|richtext}}</h3>
+
+
+{{ self.fourth_card_text|richtext }}
+<div style="text-align:center;">
+<style>.fusion-button.button-7 .fusion-button-text,.fusion-button.button-7 i{color:#333333;}.fusion-button.button-7{border-color:#333333;border-radius:0px 0px 0px 0px;background:#ffe07b;}.fusion-button.button-7:hover .fusion-button-text,.fusion-button.button-7:hover i,.fusion-button.button-7:focus .fusion-button-text,.fusion-button.button-7:focus i,.fusion-button.button-7:active .fusion-button-text,.fusion-button.button-7:active i{color:#ffffff;}.fusion-button.button-7:hover,.fusion-button.button-7:active,.fusion-button.button-7:focus{border-color:#ffffff;background:#333333;}</style>
+<a class="fusion-button button-flat fusion-button-default-size button-custom button-7 fusion-button-default-span fusion-button-default-type" target="_self" href="get-quote/index.html">
+<span class="fusion-button-text">Get A Quote</span></a></div></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<style type="text/css">.fusion-body .fusion-flex-container.fusion-builder-row-6{ padding-top : 0px;margin-top : 0px;padding-right : 8%;padding-bottom : 80px;margin-bottom : 0px;padding-left : 8%;}@media only screen and (max-width:1024px) {.fusion-body .fusion-flex-container.fusion-builder-row-6{ padding-right : 30px;padding-bottom : 50px;padding-left : 30px;}}</style>
+{% comment %} Ends here {% endcomment %}
 
 
 </div>

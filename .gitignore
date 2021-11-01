@@ -1,5 +1,6 @@
 *.swp
 *.pyc
+*.sqlite3/
 .DS_Store
 /.coverage
 /dist/
@@ -27,4 +28,4 @@ coverage/
 client/node_modules
 
 ### vscode
-.vscode
+.vscode/
