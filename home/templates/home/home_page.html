@@ -861,14 +861,22 @@ Recent Projects </h2>
 </div>
 </div>
 </div>
-
 <div class="video-column col-xl-5 col-lg-5 col-md-12 col-sm-12">
 <div class="inner-column clearfix">
 
+{% comment %} {{ self.embed_video|richtext}} {% endcomment %}
 
-<a href="{{self.embed_video|richtext}}
-{% comment %} <span class="icon-outer"><span class="icon flaticon-play-button"><i class="ripple"></i></span></span></a> {% endcomment %}
+{% comment %} <a href="{{self.embed_video|richtext}}" class="lightbox-image play-box"></a> {% endcomment %}
+{% comment %}<div class="link-box" 
+<span class="icon-outer">
+<span class="icon flaticon-play-button">
+<i class="ripple"></i> {% endcomment %}
+</span>
+</span>
+{{self.embed_video|richtext}}
+
 {% comment %} <div class="video-title">watch the intro video </div> {% endcomment %}
+</div>
 </div>
 </div>
 </div>
