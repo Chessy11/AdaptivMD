@@ -11,6 +11,7 @@
 /.tox/
 /.venv
 /venv
+/media/
 /node_modules/
 npm-debug.log*
 *.idea/
