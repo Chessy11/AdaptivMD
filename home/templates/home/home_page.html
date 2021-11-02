@@ -346,7 +346,9 @@
 <div class="flip-box-back-inner">
 <h3 class="flip-box-heading-back" style="color:#333333;">{{self.first_card_title|richtext}}</h3>
 {{self.first_card_text|richtext}}
-<div style="text-align:center;"><style>.fusion-button.button-4 .fusion-button-text,.fusion-button.button-4 i{color:#333333;}.fusion-button.button-4{border-color:#333333;border-radius:0px 0px 0px 0px;background:#ffe07b;}.fusion-button.button-4:hover .fusion-button-text,.fusion-button.button-4:hover i,.fusion-button.button-4:focus .fusion-button-text,.fusion-button.button-4:focus i,.fusion-button.button-4:active .fusion-button-text,.fusion-button.button-4:active i{color:#ffffff;}.fusion-button.button-4:hover,.fusion-button.button-4:active,.fusion-button.button-4:focus{border-color:#ffffff;background:#333333;}</style><a class="fusion-button button-flat fusion-button-default-size button-custom button-4 fusion-button-default-span fusion-button-default-type" target="_self" href="get-quote/index.html"><span class="fusion-button-text">Get A Quote</span></a>
+<div style="text-align:center;"><style>.fusion-button.button-4 .fusion-button-text,.fusion-button.button-4 i{color:#333333;}.fusion-button.button-4{border-color:#333333;border-radius:0px 0px 0px 0px;background:#ffe07b;}.fusion-button.button-4:hover .fusion-button-text,.fusion-button.button-4:hover i,.fusion-button.button-4:focus .fusion-button-text,.fusion-button.button-4:focus i,.fusion-button.button-4:active .fusion-button-text,.fusion-button.button-4:active i{color:#ffffff;}.fusion-button.button-4:hover,.fusion-button.button-4:active,.fusion-button.button-4:focus{border-color:#ffffff;background:#333333;}</style>
+{% comment %} <a class="fusion-button button-flat fusion-button-default-size button-custom button-4 fusion-button-default-span fusion-button-default-type" target="_self" href="get-quote/index.html"> {% endcomment %}
+{% comment %} <span class="fusion-button-text">Get A Quote</span></a> {% endcomment %}
 </div>
 </div>
 </div>
@@ -373,7 +375,8 @@
 {{self.second_card_text|richtext}}
 <div style="text-align:center;">
 <style>.fusion-button.button-5 .fusion-button-text,.fusion-button.button-5 i{color:#333333;}.fusion-button.button-5{border-color:#333333;border-radius:0px 0px 0px 0px;background:#ffe07b;}.fusion-button.button-5:hover .fusion-button-text,.fusion-button.button-5:hover i,.fusion-button.button-5:focus .fusion-button-text,.fusion-button.button-5:focus i,.fusion-button.button-5:active .fusion-button-text,.fusion-button.button-5:active i{color:#ffffff;}.fusion-button.button-5:hover,.fusion-button.button-5:active,.fusion-button.button-5:focus{border-color:#ffffff;background:#333333;}</style>
-<a class="fusion-button button-flat fusion-button-default-size button-custom button-5 fusion-button-default-span fusion-button-default-type" target="_self" href="get-quote/index.html"><span class="fusion-button-text">Get A Quote</span>
+{% comment %} <a class="fusion-button button-flat fusion-button-default-size button-custom button-5 fusion-button-default-span fusion-button-default-type" target="_self" href="get-quote/index.html"> {% endcomment %}
+{% comment %} <span class="fusion-button-text">Get A Quote</span> {% endcomment %}
 </a>
 </div>
 </div>
@@ -400,8 +403,11 @@
 <div class="flip-box-back-inner">
 <h3 class="flip-box-heading-back" style="color:#333333;">{{ self.third_card_title|richtext}}</h3>
 {{self.third_card_text|richtext}}
-<div style="text-align:center;"><style>.fusion-button.button-6 .fusion-button-text,.fusion-button.button-6 i{color:#333333;}.fusion-button.button-6{border-color:#333333;border-radius:0px 0px 0px 0px;background:#ffe07b;}.fusion-button.button-6:hover .fusion-button-text,.fusion-button.button-6:hover i,.fusion-button.button-6:focus .fusion-button-text,.fusion-button.button-6:focus i,.fusion-button.button-6:active .fusion-button-text,.fusion-button.button-6:active i{color:#ffffff;}.fusion-button.button-6:hover,.fusion-button.button-6:active,.fusion-button.button-6:focus{border-color:#ffffff;background:#333333;}</style>
-<a class="fusion-button button-flat fusion-button-default-size button-custom button-6 fusion-button-default-span fusion-button-default-type" target="_self" href="get-quote/index.html"><span class="fusion-button-text">Get A Quote</span></a>
+<div style="text-align:center;">
+<style>.fusion-button.button-6 .fusion-button-text,.fusion-button.button-6 i{color:#333333;}.fusion-button.button-6{border-color:#333333;border-radius:0px 0px 0px 0px;background:#ffe07b;}.fusion-button.button-6:hover .fusion-button-text,.fusion-button.button-6:hover i,.fusion-button.button-6:focus .fusion-button-text,.fusion-button.button-6:focus i,.fusion-button.button-6:active .fusion-button-text,.fusion-button.button-6:active i{color:#ffffff;}.fusion-button.button-6:hover,.fusion-button.button-6:active,.fusion-button.button-6:focus{border-color:#ffffff;background:#333333;}</style>
+{% comment %} <a class="fusion-button button-flat fusion-button-default-size button-custom button-6 fusion-button-default-span fusion-button-default-type" target="_self" href="get-quote/index.html"> {% endcomment %}
+{% comment %} <span class="fusion-button-text">Get A Quote</span> {% endcomment %}
+</a>
 </div>
 </div>
 </div>
@@ -420,20 +426,22 @@
 {% endif %}
 </div>
 <h2 class="flip-box-heading" style="color:#333333;">{{ self.fourth_card_title|richtext }}</h2>
-{{self.fourth_card_text|richtext}}
+{{self.fourth_card_text |richtext}}
 </div>
 </div>
 <div class="flip-box-back" style="background-color:#fed03d;border-color:rgba(255,255,255,0);border-radius:10px;border-style:solid;border-width:1px;color:#555555;transition-duration:0.4s;">
 <div class="flip-box-back-inner">
 
 <h3 class="flip-box-heading-back" style="color:#333333;">{{ self.fourth_card_title|richtext}}</h3>
-
-
 {{ self.fourth_card_text|richtext }}
 <div style="text-align:center;">
 <style>.fusion-button.button-7 .fusion-button-text,.fusion-button.button-7 i{color:#333333;}.fusion-button.button-7{border-color:#333333;border-radius:0px 0px 0px 0px;background:#ffe07b;}.fusion-button.button-7:hover .fusion-button-text,.fusion-button.button-7:hover i,.fusion-button.button-7:focus .fusion-button-text,.fusion-button.button-7:focus i,.fusion-button.button-7:active .fusion-button-text,.fusion-button.button-7:active i{color:#ffffff;}.fusion-button.button-7:hover,.fusion-button.button-7:active,.fusion-button.button-7:focus{border-color:#ffffff;background:#333333;}</style>
-<a class="fusion-button button-flat fusion-button-default-size button-custom button-7 fusion-button-default-span fusion-button-default-type" target="_self" href="get-quote/index.html">
-<span class="fusion-button-text">Get A Quote</span></a></div></div></div></div>
+{% comment %} <a class="fusion-button button-flat fusion-button-default-size button-custom button-7 fusion-button-default-span fusion-button-default-type" target="_self" href="get-quote/index.html"> {% endcomment %}
+{% comment %} <span class="fusion-button-text">Get A Quote</span></a> {% endcomment %}
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
