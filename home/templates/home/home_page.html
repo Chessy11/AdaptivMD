@@ -792,6 +792,8 @@ Recent Projects </h2>
 </div>
 </div>
 </section>
+
+{% comment %} Before Video {% endcomment %}
 <section class="elementor-section elementor-top-section elementor-element elementor-element-95ad700 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="95ad700" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
 <div class="elementor-container elementor-column-gap-no">
 <div class="elementor-row">
@@ -807,46 +809,54 @@ Recent Projects </h2>
 <div class="auto-container">
 <div class="row clearfix">
 
-<div class="skill-column col-xl-7 col-lg-12 col-md-12 col-sm-12">
+<div class="skill-column col-xl-11 col-lg-12 col-md-12 col-sm-12">
 <div class="inner-column">
-<h2><a
-{{self.skill_title|richtext}}</a></h2>
+<h2>{{self.skill_title|richtext}}</h2>
+</br>
+{{self.embed_video|richtext}}
+
+
 
 <div class="skills">
 
 <div class="skill-item">
 <div class="skill-header clearfix">
 <div class="skill-title">
-{{self.skill1|richtext}} </div>
-<div class="skill-percentage">
+{% comment %} {{self.skill1|richtext}}  {% endcomment %}
+
+{% comment %} <div class="skill-percentage">
 <div class="count-box">
 <span class="count-text" data-speed="2000" data-stop="95">0</span>%</div>
 </div>
 </div>
 <div class="skill-bar">
-<div class="bar-inner"><div class="bar progress-line" data-width="95"></div></div>
+<div class="bar-inner">
+<div class="bar progress-line" data-width="95">
 </div>
+</div>
+</div> {% endcomment %}
 </div>
 
 <div class="skill-item">
 <div class="skill-header clearfix">
 <div class="skill-title">
-{{self.skill2|richtext}}</div>
-<div class="skill-percentage">
+{% comment %} {{self.skill2|richtext}}</div> {% endcomment %}
+{% comment %} <div class="skill-percentage">
 <div class="count-box">
 <span class="count-text" data-speed="2000" data-stop="80">0</span>%</div>
 </div>
 </div>
 <div class="skill-bar">
-<div class="bar-inner"><div class="bar progress-line" data-width="80"></div></div>
+<div class="bar-inner"><div class="bar progress-line" data-width="80"></div></div> {% endcomment %}
 </div>
 </div>
 
 <div class="skill-item">
 <div class="skill-header clearfix">
 <div class="skill-title">
-{{self.skill3|richtext}}</div>
-<div class="skill-percentage">
+{% comment %} {{self.skill3|richtext}} {% endcomment %}
+</div>
+{% comment %} <div class="skill-percentage">
 <div class="count-box">
 <span class="count-text" data-speed="2000" data-stop="65">0</span>%</div>
 </div>
@@ -856,13 +866,14 @@ Recent Projects </h2>
 <div class="bar progress-line" data-width="65">
 </div>
 </div>
-</div>
+</div> {% endcomment %}
 </div>
 </div>
 </div>
 </div>
 <div class="video-column col-xl-5 col-lg-5 col-md-12 col-sm-12">
-<div class="inner-column clearfix">
+<div class="inner-column clearfix"> 
+{% comment %}  Before Video   {% endcomment %}
 
 {% comment %} {{ self.embed_video|richtext}} {% endcomment %}
 
@@ -873,7 +884,10 @@ Recent Projects </h2>
 <i class="ripple"></i> {% endcomment %}
 </span>
 </span>
-{{self.embed_video|richtext}}
+<div class="container" style="text-align: center;"></div>
+
+  
+
 
 {% comment %} <div class="video-title">watch the intro video </div> {% endcomment %}
 </div>

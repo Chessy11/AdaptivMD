@@ -118,10 +118,21 @@ WSGI_APPLICATION = 'AdaptivMD.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'adaptiv-psql',
+        'USER': 'adaptiv',
+        'PASSWORD': 'potoli11',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 

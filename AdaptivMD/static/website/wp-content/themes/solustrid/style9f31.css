@@ -2647,17 +2647,20 @@ img {
 }
 
 .skill-section .skill-column .inner-column {
-    position: relative
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }
 
 .skill-section .skill-column h2 {
     position: relative;
     color: #fff;
     font-size: 44px;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 1.2em;
-    padding-top: 30px;
-    margin-bottom: 70px
+    padding-top: 10px;
+    margin-bottom: 0px;
+    text-align: center
 }
 
 .skill-section .skill-column h2 span {
@@ -2665,25 +2668,9 @@ img {
     border-bottom: 1px solid #df6512
 }
 
-.skill-section .skill-column h2:before {
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 0;
-    width: 120px;
-    height: 1px;
-    background-color: #df6512
-}
+.skill-section .skill-column h2:before {}
 
-.skill-section .skill-column h2:after {
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 0;
-    width: 40px;
-    height: 1px;
-    background-color: #fff
-}
+.skill-section .skill-column h2:after {}
 
 .skills {
     position: relative
@@ -2706,10 +2693,10 @@ img {
 }
 
 .skills .skill-item .skill-bar .bar-inner {
-    position: relative;
+    position: center;
     width: 100%;
     height: 3px;
-    background: 0 0
+    background: 0 0;
 }
 
 .skills .skill-item .skill-bar .bar-inner .bar {
@@ -2731,7 +2718,7 @@ img {
 
 .skills .skill-item .skill-header {
     position: relative;
-    margin-bottom: 15px
+    margin-bottom: 15px;
 }
 
 .skills .skill-item .skill-header .skill-title {
@@ -2760,8 +2747,8 @@ img {
 }
 
 .skill-section .video-column .inner-column {
-    position: relative;
-    padding-top: 150px
+    position: flex!important;
+    padding-top: 50px!important;
 }
 
 .skill-section .video-column .inner-column .video-link-box {
@@ -9646,15 +9633,15 @@ p.has-very-light-gray-color {
 }
 
 .content-inner h2 {
-    /* font-size: 34px;
+    font-size: 34px;
     line-height: 44px;
-    margin-bottom: 25px;
     font-weight: 800;
-    color: rgb(241, 241, 241) */
+    color: rgb(241, 241, 241);
     font-size: 28px;
     line-height: 100px!important;
     font-weight: 600;
-    margin-bottom: 5px!important;
+    margin-bottom: 15px!important;
+    margin-top: -65px;
     color: rgb(255, 255, 255)
 }
 
@@ -10632,7 +10619,7 @@ a.post-edit-link:hover {
 }
 
 .wp-block-embed-vimeo .wp-block-embed__wrapper iframe {
-    position: absolute;
+    position: center;
     top: 0;
     bottom: 0;
     left: 0;
@@ -13835,25 +13822,4 @@ rs-bullet.tp-bullet.selected {
     .lower_case {
         text-transform: capitalize!important
     }
-}
-
-.fusion-builder-column-6>.fusion-column-wrapper {
-    padding-top: 0px !important;
-    padding-right: 0px !important;
-    margin-right: 1.92%;
-    padding-bottom: 0px !important;
-    padding-left: 0px !important;
-    margin-left: 1.92%;
-}
-
-.fusion-layout-column .fusion-column-wrapper {
-    min-height: 1px;
-}
-
-.fusion-flex-container .fusion-flex-justify-content-flex-start {
-    justify-content: flex-start;
-}
-
-* {
-    box-sizing: border-box;
 }
