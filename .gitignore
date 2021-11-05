@@ -1,6 +1,5 @@
 *.swp
 *.pyc
-*.sqlite3
 .DS_Store
 /.coverage
 /dist/
