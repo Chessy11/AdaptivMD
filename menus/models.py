@@ -14,23 +14,18 @@ from wagtail.core.models import Orderable
 from wagtail.snippets.models import register_snippet
 
 
-
-
-
 class MenuItem(Orderable):
-
-
     link_title = models.CharField(
         blank=True,
         null=True, 
         max_length=50
     )
+
     link_url = models.CharField(
         max_length=500,
         blank=True,
-
-    
     )
+
     link_page = models.ForeignKey(
         "wagtailcore.Page",
         null=True,
@@ -47,7 +42,6 @@ class MenuItem(Orderable):
         FieldPanel("link_url"),
         PageChooserPanel("link_page"),
         FieldPanel("open_in_new_tab"),
-        
     ]
 
     @property
@@ -89,8 +83,6 @@ class Menu(ClusterableModel):
         on_delete=models.CASCADE,
     )
 
-
-
     panels = [
         MultiFieldPanel([
             ImageChooserPanel("nav_logo"),
@@ -98,9 +90,10 @@ class Menu(ClusterableModel):
             FieldPanel("title"),
             FieldPanel("slug")
         ],
-        heading="Menu"
+            heading="Menu",
+            classname="collapsible collapsed"
         ),
-        InlinePanel("menu_items", label="Menu Item")
+        InlinePanel("menu_items", label="Menu Item", classname="collapsible collapsed")
     ]
 
     def __str__(self):

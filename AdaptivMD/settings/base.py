@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'wagtail.search',
     'wagtail.admin',
     'wagtail.core',
+    'wagtail.contrib.settings',
 
     'modelcluster',
     'taggit',
@@ -60,6 +61,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
+    'bootstrap4',
+    'widget_tweaks',
 ]
 
 SITE_ID = 1
@@ -118,23 +121,23 @@ WSGI_APPLICATION = 'AdaptivMD.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'adaptiv-psql',
-#         'USER': 'adaptiv',
-#         'PASSWORD': 'potoli11',
-#         'HOST': 'localhost',
-#         'PORT': 5432,
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'adaptiv',
+        'USER': 'postgres',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': 5432,
+    }
+}
 
 
 # Password validation
@@ -216,4 +219,6 @@ ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_USERNAME_BLACKLIST = ["admin"]
 ACCOUNT_USERNAME_MIN_LENGTH = 2
 ACCOUNT_EMAIL_REQUIRED = True
+
+DEBUG = False
 

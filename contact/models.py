@@ -1,108 +1,77 @@
 from django.db import models
-from wagtail.admin.edit_handlers import( 
-    FieldPanel, 
-    MultiFieldPanel, 
+from django import forms
+from modelcluster.fields import ParentalKey
+from wagtail.admin.edit_handlers import (
+    FieldPanel,
+    FieldRowPanel,
+    InlinePanel,
+    MultiFieldPanel,
     RichTextField,
-    MultiFieldPanel
-    )
-from wagtail.images import get_image_model_string
-from wagtail.images.edit_handlers import ImageChooserPanel
-from wagtail.core.models import Page
+    CharField,
+)
+from wagtail.contrib.forms.forms import FormBuilder
+from wagtail.core.fields import RichTextField
+from wagtail.contrib.forms.models import (
+    AbstractEmailForm,
+    AbstractFormField
+)
 
 
-
-
-
-
-class Contact(Page):
-    
-    class Meta:
-        verbose_name = "Contact Page"
-
-    
-
-
-
-    template = "contact/contact.html"
-
-    left_block_title = RichTextField(
-        verbose_name="Contact's Title",
-        null = True,
-        blank=True,
-        default="",
-
+class FormField(AbstractFormField):
+    page = ParentalKey(
+        'ContactPage',
+        on_delete=models.CASCADE,
+        related_name='form_fields',
     )
 
-    left_block_text = RichTextField(
-        verbose_name="Contact's Text",
-        null = True,
-        blank=True,
-        default="",
+    # add custom fields to FormField model
+    field_classname = CharField("Field classes", max_length=254, blank=True)
+    placeholder = CharField("Placeholder", max_length=254, blank=True)
 
-    )
-
-    office_address = RichTextField(
-        verbose_name="Office Address",
-        null = True,
-        blank=True,
-        default="",
-    )
-
-    factory_address = RichTextField(
-        verbose_name="Factory Address",
-        null = True,
-        blank=True,
-        default="",
-    )
-
-    email_address = RichTextField(
-        verbose_name="Email Address",
-        null = True,
-        blank=True,
-        default="",
-    )
-
-    phone_number_c = RichTextField(
-        verbose_name="Phone Number",
-        null = True,
-        blank=True,
-        default="",
-    )
+    panels = AbstractFormField.panels + [
+        FieldPanel("field_classname"),
+        FieldPanel("placeholder"),
+    ]
 
 
-            #Form
+class CustomFormBuilder(FormBuilder):
+    def get_create_field_function(self, type):
+        create_field_function = super().get_create_field_function(type)
 
-    form_title = RichTextField(
-        verbose_name="Form Title",
-        null = True,
-        blank=True,
-        default="",
-    )
-    
+        def wrapped_create_field_function(field, options):
 
-    content_panels = Page.content_panels +  [
-        MultiFieldPanel(
-            [
-        FieldPanel("left_block_title"),
-        FieldPanel("left_block_text"),
-        FieldPanel("office_address"),
-        FieldPanel("factory_address"),
-        FieldPanel("email_address"),
-        FieldPanel("phone_number_c"),
+            created_field = create_field_function(field, options)
+            created_field.widget.attrs.update(
+                {"class": field.field_classname, "placeholder": field.placeholder},
+            )
 
-    
-    ],
-    heading="Contact's Left Block",
-    classname="collapsible collapsed"
+            return created_field
 
-    ),
-    MultiFieldPanel(
-        [
-            FieldPanel("form_title"),
-        ],
-        heading = "Contact Form",
-        classname="collapsible collapsed"
-    )
+        return wrapped_create_field_function
 
+
+class ContactPage(AbstractEmailForm):
+    form_builder = CustomFormBuilder
+
+    template = "contact/contact_page.html"
+    landing_page_template = "contact/contact_page_landing.html"
+
+    #Contact Form Title
+    intro = RichTextField(blank=True)
+
+    #Thank you text
+    thank_you_text = RichTextField(blank=True)
+
+    content_panels = AbstractEmailForm.content_panels + [
+        FieldPanel('intro'),
+        InlinePanel('form_fields', label='Form Fields'),
+        FieldPanel('thank_you_text'),
+        MultiFieldPanel([
+            FieldRowPanel([
+                FieldPanel('from_address', classname="col6"),
+                FieldPanel('to_address', classname="col6"),
+            ]),
+            FieldPanel("subject"),
+        ], heading="Email Settings"),
     ]
 

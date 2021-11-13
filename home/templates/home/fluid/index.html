@@ -1,0 +1,37 @@
+{% load wagtailcore_tags  wagtailimages_tags  %}
+
+<!-- Fluid Section One -->
+<section class="fluid-section-one">
+    <div class="outer-container clearfix">
+
+        <!--Image Column-->
+        {% if page.feature_image %}
+            {% image page.feature_image fill-1920x760 as feature_image %}
+            <div class="image-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms" style="background-image:url({{ feature_image.url }});">
+                <figure class="image-box"><img src="{{ feature_image.url }}" alt=""></figure>
+            </div>
+        {% endif %}
+
+        <!--Content Column-->
+        <div class="content-column">
+            <div class="inner-column">
+                <!-- Sec Title -->
+                <div class="sec-title">
+                    <div class="title">{{ page.feature_title}}</div>
+                    <h2>{{ page.feature_about }}</h2>
+                </div>
+                <div class="text">{{ page.feature_highlight|richtext }}</div>
+                <ul class="list-style-one">
+                    {{ page.feature_description|richtext }}
+                </ul>
+                <!-- Signature Box -->
+                <!--<div class="signature-box">
+                    <h4>Daniel Ricardo</h4>
+                    <div class="signature-img">
+                        <img src="images/icons/signature.png" alt= ""/>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</section>
