@@ -99,7 +99,7 @@ TEMPLATES = [
         },
     },
 ]
-
+AUTH_USER_MODEL = 'users.user'
 AUTHENTICATION_BACKENDS = [
   
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -109,9 +109,9 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-ACCOUNT_ADAPTER = 'users.adapter.MyAccountAdapter'
+# ACCOUNT_ADAPTER = 'users.adapter.MyAccountAdapter'
 ACCOUNT_FORMS = {
-    'signup': 'users.forms.MyCustomSignupForm'
+    'signup': 'users.forms.MySignupForm'
     }
 
 
@@ -208,7 +208,12 @@ BASE_URL = 'http://example.com'
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
-ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_USERNAME_REQUIRED = False
+
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_LOGOUT_ON_GET = True
@@ -218,7 +223,11 @@ ACCOUNT_RESERVE_USERNAME_CASING = False
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_USERNAME_BLACKLIST = ["admin"]
 ACCOUNT_USERNAME_MIN_LENGTH = 2
-ACCOUNT_EMAIL_REQUIRED = True
+
 
 DEBUG = False
+
+WAGTAIL_USER_EDIT_FORM = 'users.forms.CustomUserEditForm'
+WAGTAIL_USER_CREATION_FORM = 'users.forms.CustomUserCreationForm'
+WAGTAIL_USER_CUSTOM_FIELDS = ['street', 'city', 'state', 'zipcode', 'phone']
 

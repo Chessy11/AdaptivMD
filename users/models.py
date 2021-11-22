@@ -1,87 +1,69 @@
 from django.db import models
-from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.hashers import make_password
-from wagtail.snippets.models import register_snippet
+from django.contrib.auth.models import AbstractUser
+from phonenumber_field.modelfields import PhoneNumberField
 
 
-@register_snippet
-class Doctor(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=20,null=False)
-    def __str__(self):
-         return self.name
 class UserManager(BaseUserManager):
-    def create_user(self, email, username, first_name, last_name, phone, password=None):
+    """Define a model manager for User model with no username field."""
+
+    use_in_migrations = True
+
+    def _create_user(self, email, password, **extra_fields):
+        """Create and save a User with the given email and password."""
         if not email:
-            raise ValueError('Email Is Required')
-        if not username:
-            raise ValueError('Username Is Required')
-        if not first_name:
-            raise ValueError("First Name Is Required")
-        if not last_name:
-            raise ValueError("Last Name Is Required")
-        if not phone:
-            pass
-        
- 
-        user = self.model(
-                      email=self.normalize_email(email),
-                      username=username,
-                      first_name=first_name,
-                      last_name=last_name,
-                      phone=phone,
-                      password=password,)
-        user.password = make_password(user.password)
-        user.save()
+            raise ValueError('The given email must be set')
+        email = self.normalize_email(email)
+        user = self.model(email=email, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
         return user
 
-def create_superuser(self, email, username,first_name,last_name, phone,  password):
-    user = self.create_user(email=self.normalize_email(email),
-                            password=password,
-                            username=username,
-                            first_name=first_name,
-                            last_name=last_name,
-                            phone=phone,
-                            )
-    user.is_admin = True
-    user.is_staff = True
-    user.is_superuser = True
-    user.save()
-    return user
-class User(AbstractBaseUser):
+    def create_user(self, email, password=None, **extra_fields):
+        """Create and save a regular User with the given email and password."""
+        extra_fields.setdefault('is_staff', False)
+        extra_fields.setdefault('is_superuser', False)
+        return self._create_user(email, password, **extra_fields)
+
+    def create_superuser(self, email, password, **extra_fields):
+        """Create and save a SuperUser with the given email and password."""
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError('Superuser must have is_staff=True.')
+        if extra_fields.get('is_superuser') is not True:
+            raise ValueError('Superuser must have is_superuser=True.')
+
+        return self._create_user(email, password, **extra_fields)
+
+
+class User(AbstractUser):
     class Meta:
         verbose_name = 'User'
+
+    username = None
     email = models.EmailField(verbose_name="email", max_length=60, unique=True)
-    username = models.CharField(max_length=30, verbose_name="username", unique=True)
     password = models.CharField(verbose_name="password", max_length=1000)
     date_joined = models.DateTimeField(verbose_name='date joined', auto_now_add=True)
     last_login = models.DateTimeField(verbose_name='last login', auto_now=True)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
+    #is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-    first_name = models.CharField(verbose_name="name", max_length=20)
+    first_name = models.CharField(verbose_name="first name", max_length=20)
     last_name = models.CharField(max_length=20, verbose_name="last name")
-    phone = models.CharField(max_length=20,unique=True, verbose_name="phone number")
-    
+    phone = PhoneNumberField(null=False, blank=False, unique=True)
+    street = models.CharField(max_length=50, verbose_name="street")
+    state = models.CharField(max_length=50, verbose_name="state")
+    city = models.CharField(max_length=50, verbose_name="city")
+    zipcode = models.CharField(max_length=10, default='', verbose_name="zipcode")
+
     USERNAME_FIELD = 'email'
-    EMAIL_FIELD = 'email'
-    REQUIRED_FIELDS = ['username','first_name','last_name', 'email']
-    
+    REQUIRED_FIELDS = []
+
     objects = UserManager()
-    
-    def get_absolute_url(self):
-        return "/users/%i/" % (self.pk)
-    
-    def __int__(self):
-        return self.id
-    
-    def has_perm(self, perm, obj=None):
-        return self.is_admin
-    
-    def has_module_perms(self, app_label):
-        return True
-    
-    def get_id(self):
-        return self.id
+
+    def __str__(self):
+        return self.email

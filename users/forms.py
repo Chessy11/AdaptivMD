@@ -1,24 +1,48 @@
 from allauth.account.forms import SignupForm
-from users import models as UserModel
 from django import forms
-from django.forms import ModelForm
-import datetime
+from wagtail.users.forms import UserEditForm, UserCreationForm
+from phonenumber_field.formfields import PhoneNumberField
 
 
-
-class MyCustomSignupForm(SignupForm):
+class MySignupForm(SignupForm):
     first_name = forms.CharField(max_length=20, label='First Name')
     last_name = forms.CharField(max_length=20, label='Last Name')
-    phone = forms.CharField(max_length=20, label='Phone Number')
+    phone = PhoneNumberField(help_text="example phone +1999999999")
+    street = forms.CharField(max_length=50, label="Street")
+    state = forms.CharField(max_length=50, label="State")
+    city = forms.CharField(max_length=50, label="City")
+    zipcode = forms.CharField(max_length=10, label="Zip Code")
 
-    # doctor = forms.ModelChoiceField(queryset=UserModel.Doctor.objects.all(), 
-    #                               empty_label=None, label="MD",
-    #                               widget=forms.Select(attrs={'class':'form-control'}))
     def save(self, request):
-        user = super(MyCustomSignupForm, self).save(request)
+        user = super(MySignupForm, self).save(request)
         user.first_name=self.cleaned_data['first_name']
         user.last_name=self.cleaned_data['last_name']
         user.phone=self.cleaned_data['phone']
-        # user.doctor=self.cleaned_data['doctor']
+        user.state = self.cleaned_data['state']
+        user.city = self.cleaned_data['city']
+        user.street = self.cleaned_data['street']
+        user.zipcode = self.cleaned_data['zipcode']
+
         user.save()
+
         return user
+
+
+class CustomUserEditForm(UserEditForm):
+    first_name = forms.CharField(max_length=20, label='First Name')
+    last_name = forms.CharField(max_length=20, label='Last Name')
+    phone = PhoneNumberField(help_text="example phone +1999999999")
+    street = forms.CharField(max_length=50, label="Street")
+    state = forms.CharField(max_length=50, label="State")
+    city = forms.CharField(max_length=50, label="City")
+    zipcode = forms.CharField(max_length=10, label="Zip Code")
+
+
+class CustomUserCreationForm(UserCreationForm):
+    first_name = forms.CharField(max_length=20, label='First Name')
+    last_name = forms.CharField(max_length=20, label='Last Name')
+    phone = PhoneNumberField(help_text="example phone +1999999999")
+    street = forms.CharField(max_length=50, label="Street")
+    state = forms.CharField(max_length=50, label="State")
+    city = forms.CharField(max_length=50, label="City")
+    zipcode = forms.CharField(max_length=50, label="Zip Code")
