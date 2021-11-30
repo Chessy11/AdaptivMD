@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="inner-column wow fadeInRight right_align" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <!-- Sec Title -->
                         <div class="sec-title">
                             {% if page.innovation_title2 != '' %}
@@ -55,6 +55,10 @@
                             <h2>{{ page.innovation_about2 }}</h2>
                         </div>
                         <div class="text">{{ page.innovation_highlight2|richtext }}</div>
+                        <!--Video Box-->
+                        <div class="contactus-btn">
+                            <a href="{{ page.video_url }}" class="lightbox-image play-box">Play now&nbsp;&nbsp;<span class="icon-outer"><span class="icon flaticon-play-button"><i class="ripple"></i></span></span></a>
+                        </div>
                     </div>
                 </div>
             </div>

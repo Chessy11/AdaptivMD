@@ -12,11 +12,11 @@
             <div class="row clearfix">
 
                 <!--big column-->
-                <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                <div class="big-column col-lg-3 col-md-12 col-sm-12">
                     <div class="row clearfix">
 
                         <!--Footer Column-->
-                        <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="footer-column col-lg-12 col-md-12 col-sm-12">
                             <div class="footer-widget about-widget">
                                 <div class="logo">
                                     {% if footer.nav_logo  %}
@@ -25,12 +25,18 @@
                                     {% endif %}
                                 </div>
                                 <div class="text">{{ settings.home.GeneralSettings.footer_title }}</div>
-                                <a href="#" class="theme-btn btn-style-four">About Company</a>
+                                <div class="contactus-btn" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                    <a href="/contact-us" class="theme-btn">Contact us</a>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!--Footer Column-->
-                        <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                <!--big column-->
+                <div class="big-column col-lg-3 col-md-12 col-sm-12">
+                    <div class="row clearfix">
+                        <div class="footer-column col-lg-12 col-md-12 col-sm-12">
                             <div class="footer-widget services-widget">
                                 <h2>EXPLORE</h2>
                                 <ul class="footer-service-list">
@@ -45,17 +51,17 @@
                 </div>
 
                 <!--big column-->
-                <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                <div class="big-column col-lg-3 col-md-12 col-sm-12">
                     <div class="row clearfix">
 
                         <!--Footer Column-->
-                        <div class="footer-column col-lg-5 col-md-6 col-sm-12">
+                        <div class="footer-column col-lg-12 col-md-12 col-sm-12">
                             <div class="footer-widget contact-widget">
                                 <h2>Contact</h2>
                                 <div class="number">{{ settings.home.GeneralSettings.phone }}</div>
                                 <ul>
                                     <li>{{ settings.home.GeneralSettings.office_address }}</li>
-                                    <li><a href="#">{{ settings.home.GeneralSettings.email }}</a></li>
+                                    <li class="email"><a href="#">{{ settings.home.GeneralSettings.email }}</a></li>
                                     <li>{{ settings.home.GeneralSettings.working_hours }}</li>
                                 </ul>
                             </div>
@@ -64,27 +70,29 @@
                     </div>
                 </div>
 
+                <!--big column-->
+                <div class="big-column col-lg-3 col-md-12 col-sm-12">
+                    <div class="row clearfix">
+
+                        <!--Footer Column-->
+                        <div class="footer-column col-lg-12 col-md-12 col-sm-12">
+                            <div class="footer-widget contact-widget">
+                                <h2>FOLLOW US</h2>
+                                <ul class="social-links">
+                                    <li><a href="{{ settings.home.GeneralSettings.facebook }}"><span class="fab fa-facebook-f"></span></a></li>
+                                    <li><a href="{{ settings.home.GeneralSettings.twitter }}"><span class="fab fa-twitter"></span></a></li>
+                                    <li><a href="{{ settings.home.GeneralSettings.youtube }}"><span class="fab fa-youtube"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="pull-left">
+						<div class="copyright">{{ settings.home.GeneralSettings.copyright }}</div>
+					</div>
+                </div>
+
             </div>
         </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <div class="clearfix">
-                <div class="pull-left">
-                    <div class="copyright">{{ settings.home.GeneralSettings.copyright }}</div>
-                </div>
-                <div class="pull-right">
-                    <!-- Social Links -->
-                    <ul class="social-links">
-                        <li><a href="{{ settings.home.GeneralSettings.facebook }}"><span class="fab fa-facebook-f"></span></a></li>
-                        <li><a href="{{ settings.home.GeneralSettings.google }}"><span class="fab fa-google-plus-g"></span></a></li>
-                        <li><a href="{{ settings.home.GeneralSettings.twitter }}"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="{{ settings.home.GeneralSettings.linkedin }}"><span class="fab fa-linkedin-in"></span></a></li>
-                        <li><a href="{{ settings.home.GeneralSettings.youtube }}"><span class="fab fa-youtube"></span></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
     </div>
 </footer>

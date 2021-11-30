@@ -257,6 +257,11 @@ class HomePage(Page):
         verbose_name='Background Image'
     )
 
+    #Contact
+    contact_title = CharField(max_length=255, verbose_name="Title", blank=True)
+    contact_highlight = CharField(max_length=255, verbose_name="Highlight Text", blank=True)
+    contact_description = CharField(max_length=255, verbose_name="Description", blank=True)
+
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [
@@ -306,6 +311,15 @@ class HomePage(Page):
                 ImageChooserPanel('video_image'),
             ],
             heading='Video',
+            classname="collapsible collapsed"
+        ),
+        MultiFieldPanel(
+            [
+                FieldPanel('contact_title'),
+                FieldPanel('contact_highlight'),
+                FieldPanel('contact_description'),
+            ],
+            heading='Contact',
             classname="collapsible collapsed"
         ),
     ]
