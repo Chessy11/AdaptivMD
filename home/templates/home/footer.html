@@ -1,5 +1,6 @@
 {% load wagtailcore_tags  wagtailimages_tags  menus_tags wagtailsettings_tags %}
-{% get_menu "footer" as navigation %}
+{% get_menu "main" as navigation %}
+{% get_menu "footer" as footer %}
 {% get_settings %}
 
 <!--Main Footer-->
@@ -18,8 +19,8 @@
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget about-widget">
                                 <div class="logo">
-                                    {% if navigation.nav_logo  %}
-                                        {% image navigation.nav_logo fill-190x40 as nav_logo %}
+                                    {% if footer.nav_logo  %}
+                                        {% image footer.nav_logo fill-190x40 as nav_logo %}
                                         <img src="{{ nav_logo.url }}" alt="Logo">
                                     {% endif %}
                                 </div>
@@ -31,14 +32,11 @@
                         <!--Footer Column-->
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget services-widget">
-                                <h2>Our Services</h2>
+                                <h2>EXPLORE</h2>
                                 <ul class="footer-service-list">
-                                    <li><a href="#">Oil & Gas Engineering</a></li>
-                                    <li><a href="#">Chemical Research</a></li>
-                                    <li><a href="#">Industrial Equipments</a></li>
-                                    <li><a href="#">Building & Construction</a></li>
-                                    <li><a href="#">Energy Production</a></li>
-                                    <li><a href="#">Agricultural Sectors</a></li>
+                                    {% for item in navigation.menu_items.all %}
+                                            <li><a title="" href="{{ item.link }}" class="nav-item nav-link">{{ item.title }}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>

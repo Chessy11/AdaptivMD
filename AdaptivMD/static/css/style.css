@@ -74,7 +74,8 @@
 @import url('owl.css');
 @import url('jquery-ui.css');
 @import url('jquery.fancybox.min.css');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
 /*** 
 
 ====================================================================
@@ -105,10 +106,10 @@ body {
 	color:#787878;
 	line-height:1.6em;
 	font-weight:400;
-	background:#ffffff;
+	background:#f8f9fb;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Inter';
 }
 
 a{
@@ -126,12 +127,16 @@ a:visited{
 
 h1,h2,h3,h4,h5,h6 {
 	position:relative;
-	font-weight:normal;
 	margin:0px;
 	background:none;
 	line-height:1.2em;
-	font-family: 'Lato', sans-serif;
 	letter-spacing: -0.02em;
+
+	font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    color: #273443;
 }
 
 textarea{
@@ -197,7 +202,7 @@ ul,li{
 	-ms-transition:all 0.3s ease;
 	-o-transition:all 0.3s ease;
 	transition:all 0.3s ease;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Inter';
 }
 
 .theme-btn i{
@@ -224,7 +229,8 @@ ul,li{
 	overflow: hidden;
 	border-radius: 3px;
 	letter-spacing:1px;
-	background-color: #df6512;
+	background: #1488B3;
+    border-radius: 8px;
 	text-transform: uppercase;
 }
 
@@ -374,13 +380,13 @@ ul,li{
 }
 
 .list-style-one li{
-	position:relative;
-	font-size:16px;
-	line-height:24px;
-	color: #222222;
-	font-weight:700;
-	padding-left:25px;
-	margin-bottom: 11px;
+	position: relative;
+    font-size: 16px;
+    line-height: 24px;
+    color: #5f6e80;
+    font-weight: normal;
+    padding-left: 25px;
+    margin: 32px 0px;
 }
 
 .list-style-one li:before{
@@ -392,7 +398,7 @@ ul,li{
 	font-size:14px;
 	line-height: 1.6em;
 	padding: 0px;
-	color:#df6512;
+	color: #1488b3;
 	font-weight:900;
 	font-family: "Font Awesome 5 Free";
 }
@@ -878,7 +884,7 @@ img{
 	position:relative;
 	float: left;
 	z-index:25;
-	padding: 32px 0px;
+	padding: 18px 0px;
 	-webkit-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
@@ -919,7 +925,7 @@ img{
 .main-menu .navigation > li{
 	position:relative;
 	float:left;
-	padding:42px 0px;
+	padding: 20px 24px;
 	margin-right: 40px;
 	-webkit-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
@@ -1205,7 +1211,7 @@ img{
 .main-header .outer-box .btn-box{
 	position: relative;
 	float: right;
-	padding: 34px 0px;
+	padding: 12px 24px;
 	margin-left: 35px;
 }
 
@@ -1598,42 +1604,29 @@ img{
 .sec-title .title{
 	position: relative;
 	display: block;
-	font-size: 18px;
-	line-height: 24px;
-	color: #afafaf;
-	font-weight: 400;
-	text-transform: capitalize;
-	margin-bottom: 10px;
+	font-family: Poppins;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1488b4;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    border: 2px solid #dcedf4;
+    border-radius: 4px;
+    padding: 8px 16px;
 }
 
 .sec-title h2{
 	position: relative;
-	display: block;
-	font-size:44px;
-	line-height: 1.2em;
-	color: #001e57;
-	font-weight: 800;
-	padding-bottom:25px;
-}
-
-.sec-title h2:before{
-	position:absolute;
-	content:'';
-	left:0px;
-	bottom:0px;
-	width:120px;
-	height:1px;
-	background-color:#df6512;
-}
-
-.sec-title h2:after{
-	position:absolute;
-	content:'';
-	left:0px;
-	bottom:0px;
-	width:40px;
-	height:1px;
-	background-color:#001e57;
+    display: block;
+    line-height: 150%;
+    color: #273443;
+    padding-bottom: 25px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 40px;
+    font-weight: bold;
 }
 
 .sec-title.light h2{
@@ -2020,7 +2013,7 @@ img{
 }
 
 .services-block .inner-box:before{
-	position:absolute;
+	/*position:absolute;
 	content:'';
 	left:0px;
 	top:0px;
@@ -2040,7 +2033,7 @@ img{
 	-webkit-transform-origin:top;
 	-ms-transform-origin:top;
 	-moz-transform-origin:top;
-	transform-origin:top;
+	transform-origin:top;*/
 }
 
 .services-block .inner-box:hover::before{
@@ -2071,13 +2064,12 @@ img{
 }
 
 .services-block .inner-box h3{
-	position:relative;
-	font-size:20px;
-	font-weight:700;
-	color:#222222;
-	line-height:1.3em;
-	margin-top:30px;
-	margin-bottom:20px;
+	position: relative;
+    font-size: 16px;
+    font-weight: bold;
+    color: #273443;
+    line-height: 150%;
+    margin: 8px 0px;
 }
 
 .services-block .inner-box h3 a{
@@ -2129,6 +2121,152 @@ img{
 }
 
 .services-block .inner-box:hover .arrow{
+	background-color:#df6512;
+	color:#ffffff;
+}
+
+.condition-title {
+    margin-bottom: 64px
+}
+
+.conditions-block {
+	position:relative;
+	margin-bottom:32px;
+}
+
+.conditions-block .inner-box{
+	position:relative;
+	display:block;
+	height: 100%;
+	text-align: left;
+	padding: 24px;
+	border-radius: 8px;
+	border: 2px solid #E0E6ED;
+	transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+}
+
+.conditions-block .inner-box .big-icon{
+	position:absolute;
+	left:0px;
+	top:80px;
+	right:0px;
+	bottom:0px;
+	line-height:1em;
+	font-size:200px;
+	text-align:center;
+	color:rgba(255,255,255,0.05);
+}
+
+.conditions-block .inner-box:hover{
+	border-color:#df6512;
+}
+
+.conditions-block .inner-box:before{
+	/*position:absolute;
+	content:'';
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	opacity:0;
+	visibility:visible;
+	background-color:#001e57;
+	transition: all 700ms ease;
+    -webkit-transition: all 700ms ease;
+    -ms-transition: all 700ms ease;
+    -o-transition: all 700ms ease;
+	-webkit-transform:scaleY(0);
+	-ms-transform:scaleY(0);
+	-moz-transform:scaleY(0);
+	transform:scaleY(0);
+	-webkit-transform-origin:top;
+	-ms-transform-origin:top;
+	-moz-transform-origin:top;
+	transform-origin:top;*/
+}
+
+.conditions-block .inner-box:hover::before{
+	opacity:1;
+	visibility:visible;
+	-webkit-transform:scaleY(1);
+	-ms-transform:scaleY(1);
+	-moz-transform:scaleY(1);
+	transform:scaleY(1);
+}
+
+.conditions-block .inner-box .icon-box{
+	position:relative;
+	font-size:60px;
+	line-height:1em;
+	color:#001e57;
+	transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+}
+
+.conditions-block .inner-box h3{
+	position: relative;
+    font-size: 16px;
+    font-weight: bold;
+    color: #273443;
+    line-height: 150%;
+    margin: 8px 0px;
+}
+
+.conditions-block .inner-box h3 a{
+	position:relative;
+	color:#222222;
+	transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+}
+
+.conditions-block .inner-box .text{
+	position:relative;
+	font-size:16px;
+	line-height:1.7em;
+	color:#5f6e80;
+	transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+}
+
+.conditions-block .inner-box .arrow{
+	position:absolute;
+	left:50%;
+	bottom:0px;
+	margin-bottom:-22px;
+	width:44px;
+	height:44px;
+	color:#df6512;
+	font-size:10px;
+	line-height:44px;
+	text-align:center;
+	border-radius:50%;
+	font-weight:800;
+	margin-left:-20px;
+	background-color:#ffffff;
+	transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	-webkit-box-shadow:0px 10px 15px rgba(0,0,0,0.05);
+	-ms-box-shadow:0px 10px 15px rgba(0,0,0,0.05);
+	box-shadow:0px 10px 15px rgba(0,0,0,0.05);
+}
+
+.conditions-block .inner-box:hover .arrow{
 	background-color:#df6512;
 	color:#ffffff;
 }
@@ -6921,7 +7059,7 @@ a.ui-button:active, .ui-button:active,
 	line-height: 26px;
 	color: #555555;
 	font-weight: 400;
-	font-family: "Lato", sans-serif;
+	font-family: 'Inter';
 	margin-bottom: 26px;
 }
 
@@ -9118,6 +9256,18 @@ a.ui-button:active, .ui-button:active,
 .features-section-two{
 	position: relative;
 	padding-top: 100px;
+}
+
+.features-section-two .set-title h3{
+	font-weight: bold;
+    font-size: 40px;
+    color: #1488b3;
+}
+
+.features-section-two .set-title h2 p{
+	font-weight: bold;
+    font-size: 40px;
+    color: #273443;
 }
 
 .features-section-two.alternate{

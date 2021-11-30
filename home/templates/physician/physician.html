@@ -1,11 +1,27 @@
 {% extends 'base.html' %}
 {% load wagtailcore_tags  wagtailimages_tags  %}
 
-{% load static %}
-{% block title %}Physician{% endblock %}
+{% block title %}AdaptivMD{% endblock %}
 
 {% block content %}
+    <!--Main Slider-->
+    {% include "physician/slider/index.html" %}
+    <!--End Main Slider-->
 
-Physician
+    <!-- Innovation Section -->
+	{% include "physician/innovation/index.html" %}
+	<!-- End Innovation Section -->
+
+    <!-- Fluid Section One -->
+    {% include "physician/fluid/index.html" %}
+	<!-- End Fluid Section One -->
+
+    <!-- Service Section -->
+	{% include "physician/service/index.html" %}
+	<!-- End Service Section -->
 
 {% endblock %}
+
+
+
+

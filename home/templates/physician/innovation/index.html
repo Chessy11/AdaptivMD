@@ -1,0 +1,35 @@
+{% load wagtailcore_tags  wagtailimages_tags  %}
+
+<!-- Features Section Two -->
+<section class="features-section-two alternate">
+    <div class="auto-container">
+        <!-- Feature Block Seven -->
+        <div class="feature-block-seven style-two">
+            <div class="row clearfix">
+                <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2">
+                    <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <figure class="image-box">
+                            {% if page.innovation_image %}
+                                {% image page.innovation_image fill-570x364 as image %}
+                                <img src="{{ image.url }}" alt="" />
+                            {% endif %}
+                        </figure>
+                    </div>
+                </div>
+                <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <!-- Sec Title -->
+                        <div class="set-title">
+                            <div class="title">{{ page.innovation_title }}</div>
+                            <h3>{{ page.innovation_about|richtext }}</h3>
+                        </div>
+                        <div class="text">
+                            <ul class="list-style-one">{{ page.innovation_highlight|richtext }}</ul>
+                        </div>
+                        <!--<div class="link-box"><a href="chemical-research.html">Read More <i class="fa fa-angle-right"></i></a></div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

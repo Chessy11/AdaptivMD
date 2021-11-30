@@ -98,6 +98,45 @@ class GeneralSettings(BaseSetting):
         ),
     ]
 
+class FeatureBlock(models.Model):
+    CHOICES = (
+        ("RIGHT", "Right"),
+        ("LEFT", "Left")
+    )
+
+    content = RichTextField(
+        verbose_name="Feature Description",
+        null=True,
+        blank=True,
+        default=""
+    )
+    image = models.ForeignKey(
+        get_image_model_string(),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Image'
+    )
+    image_position = models.CharField(
+        max_length=5,
+        choices=CHOICES,
+        default="LEFT"
+    )
+    panels = [
+        FieldPanel('content'),
+        ImageChooserPanel('image'),
+        FieldPanel('image_position')
+    ]
+
+    class Meta:
+        abstract = True
+
+
+class FeatureBlockLinks(Orderable, FeatureBlock):
+    page = ParentalKey('HomePage', on_delete=models.CASCADE, related_name='feature_block')
+
+
 class ServiceBlock(models.Model):
     title = models.CharField(
         max_length=255,
@@ -137,6 +176,7 @@ class HomePage(Page):
     
     templates = "home/home_page.html"
 
+    #Slider
     primary_image = models.ForeignKey(
         get_image_model_string(),
         null=True,
@@ -145,18 +185,19 @@ class HomePage(Page):
         related_name='+',
         verbose_name='Primary Image'
     )
-
-    #Innovation
-    innovation_title = CharField(max_length=255, verbose_name="Innovation Title", blank=True)
-    innovation_about = CharField(max_length=255, verbose_name="Innovation About", blank=True)
-    innovation_highlight = RichTextField(
-        verbose_name="Hightlight Text",
+    slider_title = CharField(max_length=255, verbose_name="Slider Title", blank=True)
+    slider_description = RichTextField(
+        verbose_name="Slider Description",
         null=True,
         blank=True,
         default=""
     )
-    innovation_description = RichTextField(
-        verbose_name="Description",
+
+    #Innovation
+    innovation_title1 = CharField(max_length=255, verbose_name="Innovation Title", blank=True)
+    innovation_about1 = CharField(max_length=255, verbose_name="Innovation About", blank=True)
+    innovation_highlight1 = RichTextField(
+        verbose_name="Hightlight Text",
         null=True,
         blank=True,
         default=""
@@ -169,6 +210,15 @@ class HomePage(Page):
         related_name='+',
         verbose_name='Image1'
     )
+
+    innovation_title2 = CharField(max_length=255, verbose_name="Innovation Title", blank=True)
+    innovation_about2 = CharField(max_length=255, verbose_name="Innovation About", blank=True)
+    innovation_highlight2 = RichTextField(
+        verbose_name="Hightlight Text",
+        null=True,
+        blank=True,
+        default=""
+    )
     innovation_image2 = models.ForeignKey(
         get_image_model_string(),
         null=True,
@@ -177,30 +227,18 @@ class HomePage(Page):
         related_name='+',
         verbose_name='Image2'
     )
+    #Services
+    service_title = CharField(max_length=255, verbose_name="Title", blank=True)
 
     #Features
     feature_title = CharField(max_length=255, verbose_name="Title", blank=True)
-    feature_about = CharField(max_length=255, verbose_name="About", blank=True)
     feature_highlight = RichTextField(
         verbose_name="Hightlight Text",
         null=True,
         blank=True,
         default=""
     )
-    feature_description = RichTextField(
-        verbose_name="Description",
-        null=True,
-        blank=True,
-        default=""
-    )
-    feature_image = models.ForeignKey(
-        get_image_model_string(),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        verbose_name='Feature Image'
-    )
+
 
     #Video
     video_title = RichTextField(
@@ -222,6 +260,8 @@ class HomePage(Page):
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [
+                FieldPanel('slider_title'),
+                FieldPanel('slider_description'),
                 ImageChooserPanel('primary_image'),
             ],
             heading = 'Primary Image',
@@ -229,11 +269,14 @@ class HomePage(Page):
         ),
         MultiFieldPanel(
             [
-                FieldPanel('innovation_title'),
-                FieldPanel('innovation_about'),
-                FieldPanel('innovation_highlight'),
-                FieldPanel('innovation_description'),
+                FieldPanel('innovation_title1'),
+                FieldPanel('innovation_about1'),
+                FieldPanel('innovation_highlight1'),
                 ImageChooserPanel('innovation_image1'),
+
+                FieldPanel('innovation_title2'),
+                FieldPanel('innovation_about2'),
+                FieldPanel('innovation_highlight2'),
                 ImageChooserPanel('innovation_image2'),
             ],
             heading='Innovation',
@@ -241,6 +284,7 @@ class HomePage(Page):
         ),
         MultiFieldPanel(
             [
+                FieldPanel('service_title'),
                 InlinePanel('service_block', label="Service Block"),
             ],
             heading='Services',
@@ -249,10 +293,8 @@ class HomePage(Page):
         MultiFieldPanel(
             [
                 FieldPanel('feature_title'),
-                FieldPanel('feature_about'),
                 FieldPanel('feature_highlight'),
-                FieldPanel('feature_description'),
-                ImageChooserPanel('feature_image'),
+                InlinePanel('feature_block', label="Feature Block"),
             ],
             heading='Features',
             classname="collapsible collapsed"

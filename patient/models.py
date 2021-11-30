@@ -1,7 +1,7 @@
 from django.db import models
-from wagtail.admin.edit_handlers import( 
-    FieldPanel, 
-    MultiFieldPanel, 
+from wagtail.admin.edit_handlers import(
+    FieldPanel,
+    MultiFieldPanel,
     RichTextField,
     MultiFieldPanel
     )
@@ -38,7 +38,7 @@ class Patient(Page):
 
     #Cards
 
-    first_card_photo = models.ForeignKey(   
+    first_card_photo = models.ForeignKey(
         get_image_model_string(),
         null=True,
         blank=True,
@@ -61,7 +61,7 @@ class Patient(Page):
         default=""
     )
 
-    second_card_photo = models.ForeignKey(   
+    second_card_photo = models.ForeignKey(
         get_image_model_string(),
         null=True,
         blank=True,
@@ -84,7 +84,7 @@ class Patient(Page):
         default=""
     )
 
-    third_card_photo = models.ForeignKey(   
+    third_card_photo = models.ForeignKey(
         get_image_model_string(),
         null=True,
         blank=True,
@@ -108,7 +108,7 @@ class Patient(Page):
         default=""
     )
 
-    fourth_card_photo = models.ForeignKey(   
+    fourth_card_photo = models.ForeignKey(
         get_image_model_string(),
         null=True,
         blank=True,
@@ -132,7 +132,7 @@ class Patient(Page):
         default=""
     )
 
-    fifth_card_photo = models.ForeignKey(   
+    fifth_card_photo = models.ForeignKey(
         get_image_model_string(),
         null=True,
         blank=True,
@@ -154,7 +154,7 @@ class Patient(Page):
         blank=True,
         default=""
     )
-    
+
 
 
     content_panels = Page.content_panels + [
@@ -165,7 +165,7 @@ class Patient(Page):
         heading='Main Left Section',
         classname="collapsible collapsed"
         ),
-        MultiFieldPanel([ 
+        MultiFieldPanel([
             ImageChooserPanel('first_card_photo'),
             FieldPanel('first_card_title'),
             FieldPanel('first_card_text'),

@@ -1,0 +1,101 @@
+{% load wagtailcore_tags  wagtailimages_tags  %}
+
+<!-- Features Section Two -->
+<section class="features-section-two alternate">
+    <div class="auto-container">
+        <!-- Feature Block Seven -->
+        <div class="feature-block-seven style-two">
+            <div class="row clearfix">
+                <div class="image-column col-lg-6 col-md-12 col-sm-12 order-2">
+                    <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <figure class="image-box">
+                            {% if page.innovation_image1 %}
+                                {% image page.innovation_image1 fill-570x364 as image1 %}
+                                <img src="{{ image1.url }}" alt="" />
+                            {% endif %}
+                        </figure>
+                    </div>
+                </div>
+                <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <!-- Sec Title -->
+                        <div class="sec-title">
+                            <div class="title">{{ page.innovation_title1 }}</div>
+                            <h2>{{ page.innovation_about1 }}</h2>
+                        </div>
+                        <div class="text">{{ page.innovation_highlight1|richtext }}</div>
+                        <!--<div class="link-box"><a href="chemical-research.html">Read More <i class="fa fa-angle-right"></i></a></div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature Block Seven -->
+        <div class="feature-block-seven">
+            <div class="row clearfix">
+                <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <figure class="image-box">
+                            {% if page.innovation_image2 %}
+                                {% image page.innovation_image2 fill-570x364 as image2 %}
+                                <img src="{{ image2.url }}" alt="" />
+                            {% endif %}
+                        </figure>
+                    </div>
+                </div>
+                <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <!-- Sec Title -->
+                        <div class="sec-title">
+                            <div class="title">{{ page.innovation_title2 }}</div>
+                            <h2>{{ page.innovation_about2 }}</h2>
+                        </div>
+                        <div class="text">{{ page.innovation_highlight2|richtext }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Features Section Two -->
+
+<!--
+<section class="innovation-section">
+    <div class="auto-container">
+        <div class="row clearfix">
+
+            <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                <div class="inner-column">
+
+                    <div class="sec-title wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div class="title">{{ page.innovation_title}}</div>
+                        <h2>{{ page.innovation_about}}</h2>
+                    </div>
+                    <div class="bold-text">{{ page.innovation_highlight|richtext }}</div>
+                    <div class="text">{{ page.innovation_description|richtext }}</div>
+
+                </div>
+            </div>
+
+
+            <div class="images-column col-lg-6 col-md-12 col-sm-12">
+                <div class="inner-column">
+                    {% if page.innovation_image1 %}
+                        {% image page.innovation_image1 fill-570x364 as image1 %}
+                        <div class="image wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <img src="{{ image1.url }}" alt="" />
+                        </div>
+                    {% endif %}
+                    {% if page.innovation_image2 %}
+                        {% image page.innovation_image2 fill-570x364 as image2 %}
+                        <div class="image wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <img src="{{ image2.url }}" alt="" />
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+-->

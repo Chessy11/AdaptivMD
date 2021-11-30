@@ -1,0 +1,46 @@
+{% load wagtailcore_tags  wagtailimages_tags  %}
+
+<!-- Fluid Section One -->
+<section class="features-section-two alternate">
+    {% for feature in page.feature_block.all %}
+        <div class="auto-container">
+            <!-- Feature Block Seven -->
+                <div class="row clearfix">
+                    {% if feature.image_position == 'RIGHT' %}
+                        <div class="col-lg-6 col-md-12 col-sm-12 order-2">
+                            <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <figure class="image-box">
+                                    {% if feature.image %}
+                                        {% image feature.image fill-570x364 as image %}
+                                        <img src="{{ image.url }}" alt="" />
+                                    {% endif %}
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                            <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <ul class="list-style-one">{{ feature.content|richtext }}</ul>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <figure class="image-box">
+                                    {% if feature.image %}
+                                        {% image feature.image fill-570x364 as image %}
+                                        <img src="{{ image.url }}" alt="" />
+                                    {% endif %}
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                            <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <ul class="list-style-one">{{ feature.content|richtext }}</ul>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</section>

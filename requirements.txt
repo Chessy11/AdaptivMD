@@ -43,3 +43,4 @@ XlsxWriter==1.4.5
 xlwt==1.3.0
 django-widget-tweaks
 django-phonenumber-field[phonenumbers]
+django-bootstrap4

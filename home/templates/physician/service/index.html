@@ -1,0 +1,25 @@
+{% load wagtailcore_tags  wagtailimages_tags  %}
+
+<!-- Services Section -->
+<section class="services-section">
+    <div class="auto-container">
+        <div class="set-title centered">
+            <h2>{{ page.gallery_title }}</h2>
+        </div>
+        <div class="row clearfix">
+
+            <!-- Services Block -->
+            {% for device in page.devicegallery_block.all %}
+                <div class="services-block col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <div class="inner-box ">
+                        {% if device %}
+                            {% image device.gallery fill-400x400 as gallery %}
+                            <img src="{{ gallery.url }}" alt="">
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- End Services Section -->
