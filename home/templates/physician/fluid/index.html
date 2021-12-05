@@ -1,46 +1,58 @@
 {% load wagtailcore_tags  wagtailimages_tags  %}
 
 <!-- Fluid Section One -->
-<section class="features-section-two alternate">
-    {% for feature in page.feature_block.all %}
-        <div class="auto-container">
-            <!-- Feature Block Seven -->
-                <div class="row clearfix">
-                    {% if feature.image_position == 'RIGHT' %}
-                        <div class="col-lg-6 col-md-12 col-sm-12 order-2">
-                            <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <figure class="image-box">
-                                    {% if feature.image %}
-                                        {% image feature.image fill-570x364 as image %}
-                                        <img src="{{ image.url }}" alt="" />
-                                    {% endif %}
-                                </figure>
-                            </div>
+<section class="features-section-two alternate clinician-fluid-section">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-12 col-sm-12 order-2">
+                <div class="sec-title">
+                    <h2>{{ page.feature_title }}</h2>
+                </div>
+            </div>
+            {% for feature in page.feature_block.all %}
+                <div class="col-lg-4 col-md-12 col-sm-12 order-2">
+                    <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <figure class="image-box">
+                            {% if feature.image %}
+                                {% image feature.image fill-64x64 as image %}
+                                <img src="{{ image.url }}" alt="" />
+                            {% endif %}
+                        </figure>
+                    </div>
+                    <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <ul class="list-style-one list-left">{{ feature.content|richtext }}</ul>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="auto-container">
+        <!-- Feature Block Seven -->
+        <div class="feature-block-seven style-two">
+            <div class="row clearfix">
+                <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <!-- Sec Title -->
+                        <div class="text">
+                            <ul class="list-style-one list-left">{{ page.feature_highlight|richtext }}</ul>
                         </div>
-                        <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                            <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <ul class="list-style-one">{{ feature.content|richtext }}</ul>
-                            </div>
-                        </div>
-                    {% else %}
-                        <div class="col-lg-6 col-md-12 col-sm-12">
-                            <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <figure class="image-box">
-                                    {% if feature.image %}
-                                        {% image feature.image fill-570x364 as image %}
-                                        <img src="{{ image.url }}" alt="" />
-                                    {% endif %}
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                            <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <ul class="list-style-one">{{ feature.content|richtext }}</ul>
-                            </div>
-                        </div>
-                    {% endif %}
+                    </div>
+                </div>
+                <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <figure class="image-box">
+                            {% if page.feature_gallery %}
+                                {% image page.feature_gallery fill-570x364 as image %}
+                                <img src="{{ image.url }}" alt="" />
+                            {% endif %}
+                        </figure>
+                    </div>
                 </div>
             </div>
         </div>
-    {% endfor %}
+    </div>
+
+
+
+
 </section>

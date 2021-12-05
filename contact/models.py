@@ -11,6 +11,8 @@ from wagtail.admin.edit_handlers import (
 )
 from wagtail.contrib.forms.forms import FormBuilder
 from wagtail.core.fields import RichTextField
+from wagtail.images import get_image_model_string
+from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.contrib.forms.models import (
     AbstractEmailForm,
     AbstractFormField
@@ -59,6 +61,38 @@ class ContactPage(AbstractEmailForm):
     #Contact Form Title
     intro = RichTextField(blank=True)
 
+    #Request DEMO
+    demo_title = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+    )
+
+    demo_content = RichTextField(
+        verbose_name="Service Description",
+        null=True,
+        blank=True,
+        default=""
+    )
+
+    demo_icon = models.ForeignKey(
+        get_image_model_string(),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Icon'
+    )
+
+    demo_image = models.ForeignKey(
+        get_image_model_string(),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Primary Image'
+    )
+
     #Thank you text
     thank_you_text = RichTextField(blank=True)
 
@@ -72,6 +106,19 @@ class ContactPage(AbstractEmailForm):
                 FieldPanel('to_address', classname="col6"),
             ]),
             FieldPanel("subject"),
-        ], heading="Email Settings"),
+        ],
+            heading="Email Settings",
+            classname="collapsible collapsed"),
+
+        MultiFieldPanel(
+            [
+                FieldPanel('demo_title'),
+                FieldPanel('demo_content'),
+                ImageChooserPanel('demo_icon'),
+                ImageChooserPanel('demo_image'),
+            ],
+            heading='Request a Demo',
+            classname="collapsible collapsed"
+        ),
     ]
 

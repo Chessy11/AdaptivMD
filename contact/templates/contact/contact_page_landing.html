@@ -1,11 +1,46 @@
 {% extends 'base.html' %}
 
-{% load wagtailcore_tags %}
+{% load static wagtailcore_tags widget_tweaks wagtailsettings_tags wagtailimages_tags %}
+{% get_settings %}
 
 {% block title %}Contact{% endblock %}
 {% block content %}
-    <h1>{{ page.title }}</h1>
-    <p>
-        {{ self.thank_you_text|richtext }}
-    </p>
+
+<!-- Contact Page Section -->
+<section class="contact-page-section">
+    <div class="auto-container contact-container">
+        <div class="row clearfix">
+            <!-- Form Column -->
+            <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                <div class="inner-column wow fadeInLeft" data-wow-delay="0ms">
+                    <img class="icon" src="{% static 'images/email_large.png' %}" />
+                    <div>
+                        <div class="text">Message sent</div>
+                        <div class="text">Thank you!</div>
+                        <div class="text">We will response to you as fas as possible.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Column -->
+            <div class="info-column col-lg-4 col-md-12 col-sm-12">
+                <div class="inner-column wow fadeInRight" data-wow-delay="0ms">
+                    <!-- Title Box -->
+                    <div class="title-box">
+                        <h3>Contact us</h3>
+                        <div class="title-text">{{self.intro|richtext}}</div>
+                    </div>
+                    <div class="contact-info-list">
+                        <img class="icon-brand" src="{% static 'images/email_small.png' %}" />
+                        <div>
+                            <div class="text email-us">Email us</div>
+                            <div class="text">{{ settings.home.GeneralSettings.email }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Contact Page Section -->
 {% endblock %}

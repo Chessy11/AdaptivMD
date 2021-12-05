@@ -1,0 +1,33 @@
+{% load wagtailcore_tags  wagtailimages_tags  %}
+
+<!-- Services Section -->
+<section class="services-section  clinician-outcome-section">
+    <div class="auto-container">
+
+
+        <div class="row clearfix">
+            <div class="conditions-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="set-title condition-title centered">
+                    <h2>{{ page.outcome_title }}</h2>
+                </div>
+            </div>
+            <!-- Services Block -->
+            {% for outcome in page.outcome_block.all %}
+                <div class="conditions-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                    <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div class="icon-box">
+                            <span class="icon">
+                                {% if outcome %}
+                                    {% image outcome.icon fill-64x64 as icon %}
+                                    <img src="{{ icon.url }}" alt="">
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="text">{{ outcome.content|richtext}}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- End Services Section -->

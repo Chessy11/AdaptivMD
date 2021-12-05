@@ -1,33 +1,46 @@
 {% extends "base.html" %}
 
 {% load i18n %}
-{% load bootstrap4 %}
+{% load static bootstrap4 widget_tweaks %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 {% block content %}
-<div class="cotainer">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Sign In</div>
-                <div class="card-body">
 
-                  <div class="text-center">
-                    <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-                  </div>
-                  <div class="text-center">
+<section class="signup-page-section bg-white">
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <div class="d-flex align-items-center justify-content-center h-100">
+                <div class="d-flex flex-column login-form-section">
+                    <div class="sec-title">
+                        <h2>Sign up</h2>
+                    </div>
                     <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-                      {% csrf_token %}
-                      {% bootstrap_form form %}
-                      {% if redirect_field_value %}
-                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                      {% endif %}
-                      <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="form-group">
+                                {% render_field field class="" placeholder=field.field.widget.attrs.placeholder %}
+                            </div>
+                        {% endfor %}
+
+                        {% buttons %}
+                            {% if redirect_field_value %}
+                                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                            {% endif %}
+                        <a class="button secondaryAction pull-right" href="{% url 'account_reset_password' %}"></a>
+                            <button class="btn btn-primary form-control" type="submit">{% trans "Sign Up" %}</button>
+                        {% endbuttons %}
                     </form>
-                  </div>
+                    <div class="text-center">
+                        <p>
+                            {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}"><span class="highlight">Log in</span></a>.{% endblocktrans %}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="col-sm-12 col-md-6">
+            <img class="login-brand" src="{% static 'images/login.png' %}" />
+        </div>
     </div>
-</div>
+</section>
 {% endblock %}

@@ -38,7 +38,7 @@
                         <a href="{% slugurl 'home' %}">
                             {% if navigation.nav_logo  %}
                                 {% image navigation.nav_logo fill-190x40 as nav_logo %}
-                                <img src="{{ nav_logo.url }}" alt="Logo">
+                                <img src="{{ nav_logo.url }}" alt="Logo" width="140">
                             {% endif %}
                         </a>
                     </div>
@@ -111,12 +111,12 @@
                 <a href="{% slugurl 'home' %}">
                     {% if navigation.nav_logo  %}
                         {% image navigation.nav_logo fill-190x40 as nav_logo %}
-                        <img src="{{ nav_logo.url }}" alt="Logo">
+                        <img src="{{ nav_logo.url }}" alt="Logo" width="140">
                     {% endif %}
                 </a>
             </div>
             <!--Right Col-->
-            <div class="pull-right">
+            <div class="nav-outer pull-right">
                 <!-- Main Menu -->
                 <nav class="main-menu">
                     <div class="navbar-collapse show collapse clearfix">

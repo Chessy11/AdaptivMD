@@ -1,6 +1,23 @@
 {% extends 'base.html' %}
+{% load wagtailcore_tags  wagtailimages_tags  %}
 
-{% block title %}About{% endblock %}
+{% block title %}AdaptivMD{% endblock %}
+
 {% block content %}
-About Us
+    <!--Main Slider-->
+    {% include "about/slider/index.html" %}
+    <!--End Main Slider-->
+
+    <!-- Innovation Section -->
+	{% include "about/mission/index.html" %}
+	<!-- End Innovation Section -->
+
+    <!-- Fluid Section One -->
+    {% include "about/vision/index.html" %}
+	<!-- End Fluid Section One -->
+
+    <!-- Contact Section -->
+	{% include "about/contact/index.html" %}
+	<!-- End Service Section -->
+
 {% endblock %}

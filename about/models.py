@@ -1,368 +1,172 @@
 from django.db import models
+from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.admin.edit_handlers import (
+    TextField,
     FieldPanel,
-    RichTextField,
     MultiFieldPanel,
+    RichTextField,
+    CharField,
+    MultiFieldPanel,
+    InlinePanel,
 )
-from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.images import get_image_model_string
+from wagtail.images.edit_handlers import ImageChooserPanel
+from modelcluster.fields import ParentalKey
+from wagtail.core.models import Orderable, Page
 
-from wagtail.core.models import Page
+
+class GoalBlock(models.Model):
+    title = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+    )
+    content = RichTextField(
+        verbose_name="Service Description",
+        null=True,
+        blank=True,
+        default=""
+    )
+    icon = models.ForeignKey(
+        get_image_model_string(),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Icon'
+    )
+
+    panels = [
+        FieldPanel('title'),
+        FieldPanel('content'),
+        ImageChooserPanel('icon'),
+    ]
+
+    class Meta:
+        abstract = True
+
+
+class GoalBlockLinks(Orderable, GoalBlock):
+    page = ParentalKey('AboutPage', on_delete=models.CASCADE, related_name='goal_block')
 
 
 class AboutPage(Page):
-  
-    class Meta:
-        verbose_name = "About Page"
+    templates = "about/about_page.html"
 
-
-    logo = models.ForeignKey(
-            get_image_model_string(),
-            null=True,
-            blank=True,
-            on_delete=models.SET_NULL,
-            related_name='+',
-            verbose_name = 'Logo'
-    )
-
-    page_title = RichTextField(
-        verbose_name="Page Title",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-    page_text = RichTextField(
-        verbose_name="Page Text",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-    content_photo = models.ForeignKey(
+    # Slider
+    primary_image = models.ForeignKey(
         get_image_model_string(),
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        verbose_name='photo',
+        verbose_name='Primary Image'
     )
-
-    content_title=RichTextField(
-        verbose_name='Content Title',
+    slider_title = CharField(max_length=255, verbose_name="Slider Title", blank=True)
+    slider_description = RichTextField(
+        verbose_name="Slider Description",
         null=True,
         blank=True,
         default=""
     )
 
-    content_text=RichTextField(
-        verbose_name='Content Text',
+    # Mission & Goals
+    mission_title = CharField(max_length=255, verbose_name="Mission & Goals Title", blank=True)
+    mission_about = RichTextField(
+        verbose_name="Description",
         null=True,
         blank=True,
         default=""
     )
-
-    mid_content_title1=RichTextField(
-        verbose_name = "Middle Content Title 1", 
-        null=True,
-        blank=True,
-        default=""
-    )
-
-    mid_content_title2=RichTextField(
-        verbose_name = "Middle Content Title 2", 
-        null=True,
-        blank=True,
-        default=""
-    )
-
-    mid_content_text1=RichTextField(
-        verbose_name = "Middle Content Text 1",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-
-    mid_content_text2=RichTextField(
-        verbose_name = "Middle Content Text 2",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-
-    mid_content_photo1=models.ForeignKey(
+    mission_image = models.ForeignKey(
         get_image_model_string(),
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        verbose_name="Middle Content Photo 1"
+        verbose_name='Image'
     )
 
+    # Vission
+    vision_title = CharField(max_length=255, verbose_name="Title", blank=True)
 
-    mid_content_photo2=models.ForeignKey(
+    vision_image = models.ForeignKey(
         get_image_model_string(),
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        verbose_name="Middle Content Photo 2"
+        verbose_name='Primary Image'
     )
-
-    banner_title=RichTextField(
-        verbose_name = "Banner Text",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-    banner_image = models.ForeignKey(
-        get_image_model_string(),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name="+",
-        verbose_name="Banner Image"
-    )
-    
-
-    banner_text=RichTextField(
-        verbose_name = "Banner Text",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-    bot_content_title = RichTextField(
-        verbose_name = "Bottom Content Title",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-    bot_content_title_dropdown1 = RichTextField(
-        verbose_name="First Dropdown Title",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-    bot_content_text_dropdown1 = RichTextField(
-        verbose_name="First Dropdown Text",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-    bot_content_title_dropdown2 = RichTextField(
-        verbose_name="Second Dropdown Title",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-
-    bot_content_text_dropdown2 = RichTextField(
-        verbose_name="Second Dropdown Text",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-
-
-
-    bot_content_title_dropdown3 = RichTextField(
-        verbose_name="Third Dropdown Title",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-
-    bot_content_text_dropdown3 = RichTextField(
-        verbose_name="Third Dropdown Text",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-
-    bot_content_title_dropdown4 = RichTextField(
-        verbose_name="Fourth Dropdown Title",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-
-    
-    bot_content_text_dropdown4 = RichTextField(
-        verbose_name="Fourth Dropdown Text",
-        null=True,
-        blank=True,
-        default=""
-    )
-
-
-    bot_content_photo = models.ForeignKey(
+    vision_icon = models.ForeignKey(
         get_image_model_string(),
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        verbose_name="Bottom Content Photo"
+        verbose_name='Icon'
     )
-
-
-    director_board_title=RichTextField(
-        verbose_name="Director's Board Title",
+    vision_description = RichTextField(
+        verbose_name="Description",
         null=True,
         blank=True,
         default=""
     )
 
-    first_board_member_photo = models.ForeignKey(
+    # Contact
+    contact_title = CharField(max_length=255, verbose_name="Title", blank=True)
+    contact_description = RichTextField(
+        verbose_name="Description",
+        null=True,
+        blank=True,
+        default=""
+    )
+    contact_image = models.ForeignKey(
         get_image_model_string(),
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        verbose_name="Bottom Content Photo"
+        verbose_name='Primary Image'
     )
-
-    board_member_text1=RichTextField(
-        verbose_name = "First Board Member Text",
-        null = True,
-        blank = True,
-        default = ""
-    )
-
-
-    second_board_member_photo = models.ForeignKey(
-        get_image_model_string(),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        verbose_name="Second Board Member Photo"
-    )
-
-    board_member_text2=RichTextField(
-        verbose_name = "Second Board Member Text",
-        null = True,
-        blank = True,
-        default = ""
-    )
-
-    
-    third_board_member_photo = models.ForeignKey(
-        get_image_model_string(),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        verbose_name="Third Board Member Photo"
-    )
-    board_member_text3=RichTextField(
-        verbose_name = "Third Board Member Text",
-        null = True,
-        blank = True,
-        default = ""
-    )
-
-    fourth_board_member_photo = models.ForeignKey(
-        get_image_model_string(),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        verbose_name="Fourth Board Member Photo"
-    )
-    board_member_text4=RichTextField(
-        verbose_name = "Fourth Board Member Text",
-        null = True,
-        blank = True,
-        default = ""
-    )
-
-
 
     content_panels = Page.content_panels + [
-        MultiFieldPanel( [
-            ImageChooserPanel('logo'),
-
-        ],
-        heading = "logo",
-        classname="collapsible collapsed"
+        MultiFieldPanel(
+            [
+                FieldPanel('slider_title'),
+                FieldPanel('slider_description'),
+                ImageChooserPanel('primary_image'),
+            ],
+            heading='Primary Image',
+            classname="collapsible collapsed"
         ),
-        MultiFieldPanel([
-            FieldPanel('page_title'),
-            FieldPanel('page_text'),
-        ],
-        heading = 'Page Heading',
-        classname="collapsible collapsed"
-        ),  
-        MultiFieldPanel([
-            ImageChooserPanel('content_photo'),
-            FieldPanel('content_title'),
-            FieldPanel('content_text'),
-        ],
-        heading = "Top Content",
-        classname="collapsible collapsed"
+        MultiFieldPanel(
+            [
+                FieldPanel('mission_title'),
+                FieldPanel('mission_about'),
+                ImageChooserPanel('mission_image'),
+                InlinePanel('goal_block', label="Goals Block"),
+            ],
+            heading='Mission & Goals',
+            classname="collapsible collapsed"
         ),
-        MultiFieldPanel([
-            FieldPanel('mid_content_title1'),
-            FieldPanel('mid_content_text1'),
-            FieldPanel('mid_content_title2'),
-            FieldPanel('mid_content_text2'),
-            ImageChooserPanel('mid_content_photo1'),
-            ImageChooserPanel('mid_content_photo2'),
-        ],
-        heading = "Middle Content",
-        classname="collapsible collapsed"
+        MultiFieldPanel(
+            [
+                FieldPanel('vision_title'),
+                FieldPanel('vision_description'),
+                ImageChooserPanel('vision_icon'),
+                ImageChooserPanel('vision_image'),
+            ],
+            heading='Company Vision',
+            classname="collapsible collapsed"
         ),
-        MultiFieldPanel([
-            ImageChooserPanel('banner_image'),
-            FieldPanel('banner_title'),
-            FieldPanel('banner_text'),
-        ],
-        heading = "Banner",
-        classname="collapsible collapsed"
+        MultiFieldPanel(
+            [
+                FieldPanel('contact_title'),
+                FieldPanel('contact_description'),
+                ImageChooserPanel('contact_image'),
+            ],
+            heading='Contactus',
+            classname="collapsible collapsed"
         ),
-        MultiFieldPanel([
-            FieldPanel('bot_content_title'),                                     
-            FieldPanel('bot_content_title_dropdown1'),
-            FieldPanel('bot_content_text_dropdown1'),
-            FieldPanel('bot_content_title_dropdown2'),
-            FieldPanel('bot_content_text_dropdown2'),
-            FieldPanel('bot_content_title_dropdown3'),
-            FieldPanel('bot_content_text_dropdown3'),
-            FieldPanel('bot_content_title_dropdown4'),
-            FieldPanel('bot_content_text_dropdown4'),
-            ImageChooserPanel('bot_content_photo'),
-
-        ],
-        heading="Bottom Content",
-        classname="collapsible collapsed"
-        ),
-        MultiFieldPanel([ 
-            FieldPanel('director_board_title'),
-            ImageChooserPanel('first_board_member_photo'),
-            FieldPanel('board_member_text1'),
-            ImageChooserPanel('second_board_member_photo'),
-            FieldPanel('board_member_text2'),
-            ImageChooserPanel('third_board_member_photo'),
-            FieldPanel('board_member_text3'),
-            ImageChooserPanel('fourth_board_member_photo'),
-            FieldPanel('board_member_text4'),
-
-        ],
-        heading = 'Directors Board',
-        classname="collapsible collapsed"
-        )
     ]
-
-    template = "about/about_page.html"

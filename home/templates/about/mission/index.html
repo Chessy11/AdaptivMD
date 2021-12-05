@@ -1,0 +1,51 @@
+{% load wagtailcore_tags  wagtailimages_tags  %}
+
+<!-- Features Section Two -->
+<section class="features-section-two alternate about-mission-section">
+    <div class="auto-container">
+        <!-- Feature Block Seven -->
+        <div class="feature-block-seven style-two">
+            <div class="row clearfix">
+                <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                    <!-- Sec Title -->
+                    <div class="sec-title">
+                        <h2>{{ page.mission_title }}</h2>
+                    </div>
+                    <div class="row clearfix">
+                        {% for goal in page.goal_block.all %}
+                            <div class="conditions-block col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                    <div class="icon-box mb-3">
+                                        <span class="icon">
+                                            {% if goal %}
+                                                {% image goal.icon fill-64x64 as icon %}
+                                                <img src="{{ icon.url }}" alt="">
+                                            {% endif %}
+                                        </span>
+                                    </div>
+                                    <div class="sec-title">
+                                        <div class="goal-title">{{ goal.title }}</div>
+                                    </div>
+                                    <div class="text">{{ goal.content|richtext }}</div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div class="text">{{ page.mission_about|richtext }}</div>
+                        <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <figure class="image-box">
+                            {% if page.mission_image %}
+                                {% image page.mission_image fill-570x364 as image %}
+                                <img src="{{ image.url }}" alt="" />
+                            {% endif %}
+                        </figure>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

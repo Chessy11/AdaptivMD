@@ -1,0 +1,68 @@
+{% load wagtailcore_tags  wagtailimages_tags  %}
+
+<!-- Fluid Section One -->
+<div class="features-section-two alternate  clinician-management-section">
+    <div class="auto-container">
+        <div class="sec-title">
+            <h2>{{ page.management_title }}</h2>
+        </div>
+        {% for management in page.management_block.all %}
+            <div class="auto-container">
+                <div class="row clearfix">
+                    {% if management.image_position == 'RIGHT' %}
+                        <div class="col-lg-6 col-md-12 col-sm-12 order-2">
+                            <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <figure class="image-box">
+                                    {% if management.gallery %}
+                                        {% image management.gallery fill-570x364 as image %}
+                                        <img src="{{ image.url }}" alt="" />
+                                    {% endif %}
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                            {% if management.icon %}
+                                <div>
+                                    {% image management.icon fill-48x48 as icon %}
+                                    <img src="{{ icon.url }}" alt="" />
+                                </div>
+                            {% endif %}
+                            <div class="sec-title">
+                                <h3>{{ management.title }}</h3>
+                            </div>
+                            <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <ul class="list-style-one list-left">{{ management.content|richtext }}</ul>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <figure class="image-box">
+                                    {% if management.gallery %}
+                                        {% image management.gallery fill-570x364 as image %}
+                                        <img src="{{ image.url }}" alt="" />
+                                    {% endif %}
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                            {% if management.icon %}
+                                <div>
+                                    {% image management.icon fill-48x32 as icon %}
+                                    <img src="{{ icon.url }}" alt="" />
+                                </div>
+                            {% endif %}
+                            <div class="sec-title">
+                                <h3>{{ management.title }}</h3>
+                            </div>
+                            <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <ul class="list-style-one list-left">{{ management.content|richtext }}</ul>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>

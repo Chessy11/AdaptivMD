@@ -54,18 +54,12 @@ class FeatureBlockLinks(Orderable, FeatureBlock):
     page = ParentalKey('physician', on_delete=models.CASCADE, related_name='feature_block')
 
 
-class ServiceBlock(models.Model):
-    title = models.CharField(
-        max_length=255,
-        null=True,
-        blank=True,
+class ManagementBlock(models.Model):
+    CHOICES = (
+        ("RIGHT", "Right"),
+        ("LEFT", "Left")
     )
-    content = RichTextField(
-        verbose_name="Service Description",
-        null=True,
-        blank=True,
-        default=""
-    )
+
     icon = models.ForeignKey(
         get_image_model_string(),
         null=True,
@@ -75,18 +69,47 @@ class ServiceBlock(models.Model):
         verbose_name='Icon'
     )
 
+    title = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+    )
+    content = RichTextField(
+        verbose_name="Description",
+        null=True,
+        blank=True,
+        default=""
+    )
+
+    gallery = models.ForeignKey(
+        get_image_model_string(),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Gallery'
+    )
+
+    image_position = models.CharField(
+        max_length=5,
+        choices=CHOICES,
+        default="LEFT"
+    )
+
     panels = [
+        ImageChooserPanel('icon'),
         FieldPanel('title'),
         FieldPanel('content'),
-        ImageChooserPanel('icon'),
+        ImageChooserPanel('gallery'),
+        FieldPanel('image_position')
     ]
 
     class Meta:
         abstract = True
 
 
-class ServiceBlockLinks(Orderable, ServiceBlock):
-    page = ParentalKey('physician', on_delete=models.CASCADE, related_name='service_block')
+class ManagementBlockLinks(Orderable, ManagementBlock):
+    page = ParentalKey('physician', on_delete=models.CASCADE, related_name='management_block')
 
 
 class DeviceGalleryBlock(models.Model):
@@ -109,6 +132,35 @@ class DeviceGalleryBlock(models.Model):
 
 class DeviceGalleryBlockLinks(Orderable, DeviceGalleryBlock):
     page = ParentalKey('physician', on_delete=models.CASCADE, related_name='devicegallery_block')
+
+
+class OutcomeBlock(models.Model):
+    content = RichTextField(
+        verbose_name="Description",
+        null=True,
+        blank=True,
+        default=""
+    )
+    icon = models.ForeignKey(
+        get_image_model_string(),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Icon'
+    )
+
+    panels = [
+        ImageChooserPanel('icon'),
+        FieldPanel('content')
+    ]
+
+    class Meta:
+        abstract = True
+
+
+class ServiceBlockLinks(Orderable, OutcomeBlock):
+    page = ParentalKey('physician', on_delete=models.CASCADE, related_name='outcome_block')
 
 
 class Physician(Page):
@@ -168,22 +220,27 @@ class Physician(Page):
         blank=True,
         default=""
     )
-
-    # Video
-    video_title = RichTextField(
-        verbose_name="Video Title",
-        null=True,
-        blank=True,
-        default=""
-    )
-    video_url = CharField(max_length=255, verbose_name="Video URL", blank=True)
-    video_image = models.ForeignKey(
+    feature_gallery = models.ForeignKey(
         get_image_model_string(),
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        verbose_name='Background Image'
+        verbose_name='Image'
+    )
+
+    # Management
+    management_title = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+    )
+
+    #Outcome
+    outcome_title = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
     )
 
     content_panels = Page.content_panels + [
@@ -206,18 +263,11 @@ class Physician(Page):
             heading='Innovation',
             classname="collapsible collapsed"
         ),
-        # MultiFieldPanel(
-        #     [
-        #         FieldPanel('service_title'),
-        #         InlinePanel('service_block', label="Service Block"),
-        #     ],
-        #     heading='Services',
-        #     classname="collapsible collapsed"
-        # ),
         MultiFieldPanel(
             [
                 FieldPanel('feature_title'),
                 FieldPanel('feature_highlight'),
+                ImageChooserPanel('feature_gallery'),
                 InlinePanel('feature_block', label="Feature Block"),
             ],
             heading='Features',
@@ -229,6 +279,22 @@ class Physician(Page):
                 InlinePanel('devicegallery_block', label="Device Gallery Block"),
             ],
             heading='Device Kits',
+            classname="collapsible collapsed"
+        ),
+        MultiFieldPanel(
+            [
+                FieldPanel('management_title'),
+                InlinePanel('management_block', label="Management Block"),
+            ],
+            heading='Management',
+            classname="collapsible collapsed"
+        ),
+        MultiFieldPanel(
+            [
+                FieldPanel('outcome_title'),
+                InlinePanel('outcome_block', label="Outcome Block"),
+            ],
+            heading='Outcomes',
             classname="collapsible collapsed"
         ),
     ]
