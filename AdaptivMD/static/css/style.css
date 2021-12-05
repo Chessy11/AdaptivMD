@@ -229,7 +229,7 @@ ul,li{
 	overflow: hidden;
 	border-radius: 3px;
 	letter-spacing:1px;
-	background: #1488B3;
+	background: #ee714c;
     border-radius: 8px;
 	text-transform: uppercase;
 }
@@ -408,7 +408,7 @@ ul,li{
 	font-size:14px;
 	line-height: 1.6em;
 	padding: 0px;
-	color: #1488b3;
+	color: #ee714c;
 	font-weight:900;
 	font-family: "Font Awesome 5 Free";
 }
@@ -422,7 +422,7 @@ ul,li{
 	font-size:14px;
 	line-height: 1.6em;
 	padding: 0px;
-	color: #1488b3;
+	color: #ee714c;
 	font-weight:900;
 	font-family: "Font Awesome 5 Free";
 }
@@ -1722,7 +1722,7 @@ img{
     text-align: center;
 }
 .contactus-btn a {
-    background: #1488be;
+    background: #ee714c;
     box-shadow: 0px 4px 24px rgba(20, 136, 179, 0.12);
     border-radius: 8px;
     position: relative;
@@ -3969,7 +3969,7 @@ img{
 
 .main-footer .footer-widget{
 	position:relative;
-	margin-bottom:40px;
+	margin-bottom:10px;
 }
 
 .main-footer .footer-widget .email a{
@@ -4029,7 +4029,7 @@ img{
 
 .footer-service-list li{
 	position:relative;
-	margin-bottom:10px;
+	margin-bottom:5px;
 }
 
 .footer-service-list li a{
@@ -9826,7 +9826,7 @@ a.ui-button:active, .ui-button:active,
 .features-section-two .set-title h3{
 	font-weight: bold;
     font-size: 40px;
-    color: #1488b3;
+    color: #003D6D;
 }
 
 .features-section-two .set-title h2 p{
