@@ -977,8 +977,8 @@ img{
 }
 
 .main-header .auto-container {
-    padding-left: 112px;
-    padding-right: 112px;
+    padding-left: 150px;
+    padding-right: 150px;
     display: flex;
     align-items: center;
     justify-content: space-between;
