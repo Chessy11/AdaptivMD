@@ -231,7 +231,7 @@ ul,li{
 	letter-spacing:1px;
 	background: #ee714c;
     border-radius: 8px;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 
 .btn-style-one:hover{
@@ -321,7 +321,7 @@ ul,li{
 	border-radius: 3px;
 	letter-spacing:1px;
 	background-color: #001e57;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 
 .btn-style-five:hover{
