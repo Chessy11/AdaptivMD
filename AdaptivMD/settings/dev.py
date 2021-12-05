@@ -13,11 +13,11 @@ ALLOWED_HOSTS = ['*']
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'info@adaptivmd.us'
-EMAIL_HOST_PASSWORD = '8F3Te9=C'
+EMAIL_HOST_USER = 'adaptivmd@gmail.com'
+EMAIL_HOST_PASSWORD = 'Windy2009#'
 DEFAULT_FROM_EMAIL = 'info@adaptivmd.us'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-SERVER_EMAIL = 'info@adaptivmd.us'
+SERVER_EMAIL = 'adaptivmd@gmail.com'
 
 
 try:
