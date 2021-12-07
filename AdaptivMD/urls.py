@@ -41,3 +41,6 @@ urlpatterns = urlpatterns + [
     # of your site, rather than the site root:
     #    path("pages/", include(wagtail_urls)),
 ]
+
+handler404 = 'users.views.handler404'
+handler500 = 'users.views.handler500'

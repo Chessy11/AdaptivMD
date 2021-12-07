@@ -7,7 +7,7 @@ from phonenumber_field.formfields import PhoneNumberField
 class MySignupForm(SignupForm):
     first_name = forms.CharField(max_length=20, widget=forms.TextInput(attrs={'placeholder': 'First Name'}))
     last_name = forms.CharField(max_length=20, widget=forms.TextInput(attrs={'placeholder': 'Last Name'}))
-    phone = PhoneNumberField(help_text="example phone +1999999999", widget=forms.TextInput(attrs={'placeholder': 'Phone Number'}))
+    phone = PhoneNumberField(help_text="example phone +1999999999", widget=forms.TextInput(attrs={'placeholder': 'Phone Number(ex:+1999999999)'}))
     street = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Street'}))
     state = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'State'}))
     city = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'City'}))
