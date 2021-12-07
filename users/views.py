@@ -6,14 +6,14 @@ def signup(request):
     pass
 
 
-def handler404(request):
+def handler404(request, exception):
     context = {}
     response = render(request, '404.html', context=context)
     response.status_code = 404
     return response
 
 
-def handler500(request):
+def handler500(request, *args, **argv):
     context = {}
     response = render(request, '500.html', context=context)
     response.status_code = 500
