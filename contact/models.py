@@ -17,7 +17,7 @@ from wagtail.contrib.forms.models import (
     AbstractEmailForm,
     AbstractFormField
 )
-
+from django.core.mail import send_mail, BadHeaderError
 
 class FormField(AbstractFormField):
     page = ParentalKey(
@@ -121,4 +121,11 @@ class ContactPage(AbstractEmailForm):
             classname="collapsible collapsed"
         ),
     ]
+
+    def process_form_submission(self, form):
+        self.subject = 'New Contact'
+
+        super().process_form_submission(form)
+
+
 
