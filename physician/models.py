@@ -212,6 +212,9 @@ class Physician(Page):
     # Services
     gallery_title = CharField(max_length=255, verbose_name="Title", blank=True)
 
+    # Infographic
+    infographic_title = CharField(max_length=255, verbose_name="Title", blank=True)
+
     # Features
     feature_title = CharField(max_length=255, verbose_name="Title", blank=True)
     feature_highlight = RichTextField(
@@ -279,6 +282,13 @@ class Physician(Page):
                 InlinePanel('devicegallery_block', label="Device Gallery Block"),
             ],
             heading='Device Kits',
+            classname="collapsible collapsed"
+        ),
+        MultiFieldPanel(
+            [
+                FieldPanel('infographic_title'),
+            ],
+            heading='Infographic',
             classname="collapsible collapsed"
         ),
         MultiFieldPanel(
