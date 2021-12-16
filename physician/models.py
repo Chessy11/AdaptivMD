@@ -33,7 +33,7 @@ class FeatureBlock(models.Model):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        verbose_name='Image'
+        verbose_name='Icon'
     )
     image_position = models.CharField(
         max_length=5,
@@ -276,7 +276,7 @@ class Physician(Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
-        verbose_name='Image'
+        verbose_name='Gallery'
     )
 
     # Management

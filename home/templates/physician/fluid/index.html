@@ -30,16 +30,8 @@
         <!-- Feature Block Seven -->
         <div class="feature-block-seven style-two">
             <div class="row clearfix">
-                <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <!-- Sec Title -->
-                        <div class="text">
-                            <ul class="list-style-one list-left">{{ page.feature_highlight|richtext }}</ul>
-                        </div>
-                    </div>
-                </div>
                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <figure class="image-box">
                             {% if page.feature_gallery %}
                                 {% image page.feature_gallery fill-570x364 as image %}
@@ -48,11 +40,15 @@
                         </figure>
                     </div>
                 </div>
+                <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <!-- Sec Title -->
+                        <div class="text">
+                            <ul class="list-style-one list-left">{{ page.feature_highlight|richtext }}</ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-
-
-
 </section>
