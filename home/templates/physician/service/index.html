@@ -18,31 +18,31 @@
             <div class="gallery-container">
                 <div class="gallery-photo1">
                         {% if device %}
-                            {% image device.gallery fill-400x400 as gallery %}
+                            {% image device.gallery fill-100x100 as gallery %}
                             <img src="{{ gallery.url }}" alt="">
                         {% endif %}
                 </div>
                 <div class="gallery-photo2">
                         {% if device %}
-                            {% image device.device1 fill-400x400 as device1 %}
+                            {% image device.device1 fill-100x100 as device1 %}
                             <img src="{{ device1.url }}" alt="">
                         {% endif %}
                 </div>
                 <div class="gallery-photo3">
                         {% if device %}
-                            {% image device.device2 fill-400x400 as device2 %}
+                            {% image device.device2 fill-100x100 as device2 %}
                             <img src="{{ device2.url }}" alt="">
                         {% endif %}
                 </div>
                 <div class="gallery-photo4">
                         {% if device %}
-                            {% image device.device3 fill-400x400 as device3 %}
+                            {% image device.device3 fill-100x100 as device3 %}
                             <img src="{{ device3.url }}" alt="">
                         {% endif %}
                 </div>
                 <div class="gallery-photo5">
                         {% if device %}
-                            {% image device.device4 fill-400x400 as device4 %}
+                            {% image device.device4 fill-100x100 as device4 %}
                             <img src="{{ device4.url }}" alt="">
                         {% endif %}
                 </div>
