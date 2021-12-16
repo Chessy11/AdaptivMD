@@ -10,14 +10,79 @@
 
             <!-- Services Block -->
             {% for device in page.devicegallery_block.all %}
-                <div class="services-block col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                    <div class="inner-box ">
+                {% if device.title %}
+                    <div class="sec-title">
+                        <h3>{{ device.title }}</h3>
+                    </div>
+                {% endif %}
+            <div class="gallery-container">
+                <div class="gallery-photo1">
                         {% if device %}
                             {% image device.gallery fill-400x400 as gallery %}
                             <img src="{{ gallery.url }}" alt="">
                         {% endif %}
-                    </div>
                 </div>
+                <div class="gallery-photo2">
+                        {% if device %}
+                            {% image device.device1 fill-400x400 as device1 %}
+                            <img src="{{ device1.url }}" alt="">
+                        {% endif %}
+                </div>
+                <div class="gallery-photo3">
+                        {% if device %}
+                            {% image device.device2 fill-400x400 as device2 %}
+                            <img src="{{ device2.url }}" alt="">
+                        {% endif %}
+                </div>
+                <div class="gallery-photo4">
+                        {% if device %}
+                            {% image device.device3 fill-400x400 as device3 %}
+                            <img src="{{ device3.url }}" alt="">
+                        {% endif %}
+                </div>
+                <div class="gallery-photo5">
+                        {% if device %}
+                            {% image device.device4 fill-400x400 as device4 %}
+                            <img src="{{ device4.url }}" alt="">
+                        {% endif %}
+                </div>
+            </div>
+            <!--<div class="row">-->
+                <!--<div class="services-block col-xl-6 col-lg-6 col-md-6 col-sm-12">-->
+                    <!--<div class="inner-box ">-->
+                        <!--{% if device %}-->
+                            <!--{% image device.gallery fill-400x400 as gallery %}-->
+                            <!--<img src="{{ gallery.url }}" alt="">-->
+                        <!--{% endif %}-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="kits-block col-xl-6 col-lg-6 col-md-6 col-sm-12">-->
+                    <!--<div class="inner-box ">-->
+                        <!--{% if device %}-->
+                            <!--{% image device.device1 fill-400x400 as device1 %}-->
+                            <!--<img src="{{ device1.url }}" alt="">-->
+                        <!--{% endif %}-->
+                    <!--</div>-->
+                    <!--<div class="inner-box ">-->
+                        <!--{% if device %}-->
+                            <!--{% image device.device2 fill-400x400 as device2 %}-->
+                            <!--<img src="{{ device2.url }}" alt="">-->
+                        <!--{% endif %}-->
+                    <!--</div>-->
+                    <!--<div class="inner-box ">-->
+                        <!--{% if device %}-->
+                            <!--{% image device.device3 fill-400x400 as device3 %}-->
+                            <!--<img src="{{ device3.url }}" alt="">-->
+                        <!--{% endif %}-->
+                    <!--</div>-->
+                    <!--<div class="inner-box ">-->
+                        <!--{% if device %}-->
+                            <!--{% image device.device4 fill-400x400 as device4 %}-->
+                            <!--<img src="{{ device4.url }}" alt="">-->
+                        <!--{% endif %}-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
             {% endfor %}
         </div>
     </div>

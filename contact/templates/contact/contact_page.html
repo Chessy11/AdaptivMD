@@ -14,7 +14,7 @@
             <div class="card-body">
                 <div class="row clearfix">
                     <!-- Form Column -->
-                    <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                    <div class="form-column col-lg-6 col-md-12 col-sm-12">
                         <div class="inner-column wow fadeInLeft" data-wow-delay="0ms">
                             <!-- Sec Title -->
                             <div class="sec-title">
@@ -46,7 +46,7 @@
                     </div>
 
                     <!-- Info Column -->
-                    <div class="info-column col-lg-4 col-md-12 col-sm-12">
+                    <div class="info-column col-lg-6 col-md-12 col-sm-12">
                         <div class="inner-column wow fadeInRight" data-wow-delay="0ms">
                             <!-- Title Box -->
                             <div class="title-box">
@@ -64,40 +64,40 @@
                     </div>
                 </div>
 
-                <div class="row clearfix demo collapse" id="collapseExample">
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <figure class="image-box">
-                                {% if page.demo_image %}
-                                    {% image page.demo_image fill-570x364 as image %}
-                                    <img src="{{ image.url }}" alt="" />
-                                {% endif %}
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                        {% if page.demo_icon %}
-                            {% image page.demo_icon fill-48x48 as icon %}
-                            <img class="icon-brand" src="{{ icon.url }}" alt="" />
-                        {% endif %}
-                        <div class="sec-title">
-                            <h2>{{ page.demo_title }}</h2>
-                        </div>
-                        <div class="text">{{ page.demo_content|richtext }}</div>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12 col-sm-12 form-group btn-submit">
-                                <button class="theme-btn btn-style-five" type="submit" name="submit-form">Request a demo</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!--<div class="row clearfix demo collapse" id="collapseExample">-->
+                    <!--<div class="col-lg-6 col-md-12 col-sm-12">-->
+                        <!--<div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">-->
+                            <!--<figure class="image-box">-->
+                                <!--{% if page.demo_image %}-->
+                                    <!--{% image page.demo_image fill-570x364 as image %}-->
+                                    <!--<img src="{{ image.url }}" alt="" />-->
+                                <!--{% endif %}-->
+                            <!--</figure>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="content-column col-lg-6 col-md-12 col-sm-12">-->
+                        <!--{% if page.demo_icon %}-->
+                            <!--{% image page.demo_icon fill-48x48 as icon %}-->
+                            <!--<img class="icon-brand" src="{{ icon.url }}" alt="" />-->
+                        <!--{% endif %}-->
+                        <!--<div class="sec-title">-->
+                            <!--<h2>{{ page.demo_title }}</h2>-->
+                        <!--</div>-->
+                        <!--<div class="text">{{ page.demo_content|richtext }}</div>-->
+                        <!--<div class="row">-->
+                            <!--<div class="col-lg-6 col-md-12 col-sm-12 form-group btn-submit">-->
+                                <!--<button class="theme-btn btn-style-five" type="submit" name="submit-form">Request a demo</button>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
         </div>
-        <p>
-            <a class="request-demo-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <span class="glyphicon glyphicon-chevron-down">Request a demo</span>
-            </a>
-        </p>
+        <!--<p>-->
+            <!--<a class="request-demo-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">-->
+                <!--<span class="glyphicon glyphicon-chevron-down">Request a demo</span>-->
+            <!--</a>-->
+        <!--</p>-->
     </div>
 </section>
 <!-- End Contact Page Section -->
