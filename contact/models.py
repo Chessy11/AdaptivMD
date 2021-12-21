@@ -58,9 +58,6 @@ class ContactPage(AbstractEmailForm):
     template = "contact/contact_page.html"
     landing_page_template = "contact/contact_page_landing.html"
 
-    #Contact Form Title
-    intro = RichTextField(blank=True)
-
     #Request DEMO
     # demo_title = models.CharField(
     #     max_length=255,
@@ -95,11 +92,20 @@ class ContactPage(AbstractEmailForm):
 
     #Thank you text
     thank_you_text = RichTextField(blank=True)
+    contact_us_title = CharField(max_length=255, verbose_name="Title", blank=True)
+    contact_us_text = CharField(max_length=255, verbose_name="Contact Us Text", blank=True)
+    description_text = RichTextField(blank=True)
 
     content_panels = AbstractEmailForm.content_panels + [
-        FieldPanel('intro'),
-        InlinePanel('form_fields', label='Form Fields'),
-        FieldPanel('thank_you_text'),
+        InlinePanel('form_fields', label='Form Fields', classname="collapsible collapsed"),
+        MultiFieldPanel([
+            FieldPanel('thank_you_text'),
+            FieldPanel('contact_us_title'),
+            FieldPanel('contact_us_text'),
+            FieldPanel('description_text'),
+        ],
+            heading="Text Setting",
+            classname="collapsible collapsed"),
         MultiFieldPanel([
             FieldRowPanel([
                 FieldPanel('from_address', classname="col6"),
