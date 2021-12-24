@@ -1537,7 +1537,7 @@ img{
 .sticky-header .main-menu .navigation > li.current > a,
 .sticky-header .main-menu .navigation > li.current-menu-item > a{
 	opacity:1;
-	color: #3B4857;
+	color: #fe714c;
 }
 
 .sticky-header .main-menu .navigation > li:hover > a:after,

@@ -135,13 +135,21 @@
                     <div class="navbar-collapse show collapse clearfix">
                         <ul class="navigation clearfix">
                             {% for item in navigation.menu_items.all %}
+                                {% if request.path == item.link %}
+                                    <li class="current"><a title="" href="{{ item.link }}" class="nav-item nav-link">{{ item.title }}</a></li>
+                                {% else %}
                                     <li><a title="" href="{{ item.link }}" class="nav-item nav-link">{{ item.title }}</a></li>
+                                {% endif %}
                             {% endfor %}
 
                             {% if request.user.is_authenticated %}
                                 <li><a href="{% url 'account_logout' %}" class="nav-item nav-link">Logout</a></li>
                             {% else %}
-                            <li><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>
+                                {% if request.path == '/login/' %}
+                                    <li class="current"><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>
+                                {% else %}
+                                    <li><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>
+                                {% endif %}
                             {% endif %}
                             <li>
                                 <div class="btn-box">
