@@ -229,7 +229,7 @@ ul,li{
 	overflow: hidden;
 	border-radius: 3px;
 	letter-spacing:1px;
-	background: #ee714c;
+	background: #fe714c;
     border-radius: 8px;
 	/*text-transform: uppercase;*/
 }
@@ -408,7 +408,7 @@ ul,li{
 	font-size:14px;
 	line-height: 1.6em;
 	padding: 0px;
-	color: #ee714c;
+	color: #fe714c;
 	font-weight:900;
 	font-family: "Font Awesome 5 Free";
 }
@@ -422,7 +422,7 @@ ul,li{
 	font-size:14px;
 	line-height: 1.6em;
 	padding: 0px;
-	color: #ee714c;
+	color: #fe714c;
 	font-weight:900;
 	font-family: "Font Awesome 5 Free";
 }
@@ -998,7 +998,7 @@ img{
 
 .main-menu .navigation > li:hover > a,
 .main-menu .navigation > li.current > a{
-	color: #3B4857;
+	color: #fe714c;
 }
 
 .main-menu .navigation > li:hover:after,
@@ -1732,7 +1732,7 @@ img{
     text-align: center;
 }
 .contactus-btn a {
-    background: #ee714c;
+    background: #fe714c;
     box-shadow: 0px 4px 24px rgba(20, 136, 179, 0.12);
     border-radius: 8px;
     position: relative;
@@ -2579,6 +2579,7 @@ img{
 /** About Contact Section **/
 .about-contact-section {
     text-align: left;
+    padding-top: 0px!important;
 }
 .about-contact-section .feature-block-seven .contactus-btn {
     text-align: left;
@@ -3975,6 +3976,7 @@ img{
 .main-footer{
 	position:relative;
 	background-color:#3b4857;
+	/*text-align: center;*/
 }
 
 .main-footer .footer-widget{
@@ -3983,7 +3985,7 @@ img{
 }
 
 .main-footer .footer-widget .email a{
-    color: #dcedf4;
+    color: #b0bbcb;
 }
 
 .main-footer .widgets-section{
@@ -4020,11 +4022,10 @@ img{
 
 .main-footer .about-widget .text{
 	position:relative;
-	color:#cccccc;
+	color:#b0bbcb;
 	font-size:16px;
 	line-height:1.6em;
 	margin-top:22px;
-	margin-bottom:32px;
 }
 
 .main-footer .contactus-btn {
@@ -4390,7 +4391,7 @@ img{
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
-    color: #1488b3;
+    color: #003d6d;
 }
 
 .contact-page-section .info-column .inner-column .title-box .title-text p{
@@ -4447,6 +4448,9 @@ img{
 	background-color:#ffffff;
 }
 
+.contact-page-section .btn-style-five {
+    background-color: #fe714c;
+}
 /* Contact Info List */
 
 .contact-info-list{
@@ -10033,4 +10037,27 @@ a.ui-button:active, .ui-button:active,
 .gallery-photo5 {
     grid-column: 3;
     grid-row: 4;
+}
+
+.workflow-section {
+    padding-bottom: 0px!important;
+}
+
+.terms-and-condition {
+    display: flex;
+    justify-content: left;
+}
+
+.terms-and-condition li a{
+    color: #fe714c;
+    text-decoration: underline;
+}
+.terms-and-condition li:not(:first-child):before {
+    content: "";
+    width: 0;
+    height: 100%;
+    border: 1px solid;
+    display: inline;
+    margin: 0 8px;
+    color: #b0bbcb;
 }

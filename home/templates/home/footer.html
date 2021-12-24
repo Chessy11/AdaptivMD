@@ -12,7 +12,7 @@
             <div class="row clearfix">
 
                 <!--big column-->
-                <div class="big-column col-lg-3 col-md-12 col-sm-12">
+                <div class="big-column col-lg-6 col-md-12 col-sm-12">
                     <div class="row clearfix">
 
                         <!--Footer Column-->
@@ -20,14 +20,20 @@
                             <div class="footer-widget about-widget">
                                 <div class="logo">
                                     {% if footer.nav_logo  %}
-                                        {% image footer.nav_logo fill-331x96 as nav_logo %}
+                                        {% image footer.nav_logo fill-145x91 as nav_logo %}
                                         <img src="{{ nav_logo.url }}" alt="Logo">
                                     {% endif %}
                                 </div>
+                                <!--<div class="text">{{ settings.home.GeneralSettings.footer_title }}</div>-->
+                                <!--<div class="contactus-btn" data-wow-delay="0ms" data-wow-duration="1500ms">-->
+                                    <!--<a href="/contact-us" class="theme-btn">Contact us</a>-->
+                                <!--</div>-->
                                 <div class="text">{{ settings.home.GeneralSettings.footer_title }}</div>
-                                <div class="contactus-btn" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                    <a href="/contact-us" class="theme-btn">Contact us</a>
-                                </div>
+                                <div class="text">{{ settings.home.GeneralSettings.copyright }}</div>
+                                <ul class="footer-service-list terms-and-condition">
+                                    <li><a href="/pripacy">Privacy Policy</a></li>
+                                    <li><a href="/terms">Terms and Conditions</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -61,8 +67,8 @@
                                 <!--<div class="number">{{ settings.home.GeneralSettings.phone }}</div>-->
                                 <ul>
                                     <!--<li>{{ settings.home.GeneralSettings.office_address }}</li>-->
-                                    <li class="email"><a href="#">{{ settings.home.GeneralSettings.email }}</a></li>
-                                    <li>{{ settings.home.GeneralSettings.working_hours }}</li>
+                                    <li class="email"><a href="/contact-us">Receive a FREE Care Kit</a></li>
+                                    <!--<li>{{ settings.home.GeneralSettings.working_hours }}</li>-->
                                 </ul>
                             </div>
                         </div>
@@ -71,26 +77,26 @@
                 </div>
 
                 <!--big column-->
-                <div class="big-column col-lg-3 col-md-12 col-sm-12">
-                    <div class="row clearfix">
+                <!--<div class="big-column col-lg-3 col-md-12 col-sm-12">-->
+                    <!--<div class="row clearfix">-->
 
-                        <!--Footer Column-->
-                        <div class="footer-column col-lg-12 col-md-12 col-sm-12">
-                            <div class="footer-widget contact-widget">
-                                <h2>FOLLOW US</h2>
-                                <ul class="social-links">
-                                    <li><a href="{{ settings.home.GeneralSettings.facebook }}"><span class="fab fa-facebook-f"></span></a></li>
-                                    <li><a href="{{ settings.home.GeneralSettings.twitter }}"><span class="fab fa-twitter"></span></a></li>
-                                    <li><a href="{{ settings.home.GeneralSettings.youtube }}"><span class="fab fa-youtube"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <!--&lt;!&ndash;Footer Column&ndash;&gt;-->
+                        <!--<div class="footer-column col-lg-12 col-md-12 col-sm-12">-->
+                            <!--<div class="footer-widget contact-widget">-->
+                                <!--<h2>FOLLOW US</h2>-->
+                                <!--<ul class="social-links">-->
+                                    <!--<li><a href="{{ settings.home.GeneralSettings.facebook }}"><span class="fab fa-facebook-f"></span></a></li>-->
+                                    <!--<li><a href="{{ settings.home.GeneralSettings.twitter }}"><span class="fab fa-twitter"></span></a></li>-->
+                                    <!--<li><a href="{{ settings.home.GeneralSettings.youtube }}"><span class="fab fa-youtube"></span></a></li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
-                    </div>
-                    <div class="pull-left">
-						<div class="copyright">{{ settings.home.GeneralSettings.copyright }}</div>
-					</div>
-                </div>
+                    <!--</div>-->
+                    <!--<div class="pull-left">-->
+						<!--<div class="copyright">{{ settings.home.GeneralSettings.copyright }}</div>-->
+					<!--</div>-->
+                <!--</div>-->
 
             </div>
         </div>

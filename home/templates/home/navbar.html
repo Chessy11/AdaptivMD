@@ -37,7 +37,7 @@
                     <div class="logo">
                         <a href="{% slugurl 'home' %}">
                             {% if navigation.nav_logo  %}
-                                {% image navigation.nav_logo fill-165x48 as nav_logo %}
+                                {% image navigation.nav_logo fill-331x96 as nav_logo %}
                                 <img src="{{ nav_logo.url }}" alt="Logo">
                             {% endif %}
                         </a>
@@ -58,17 +58,25 @@
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
                                 {% for item in navigation.menu_items.all %}
-                                    <li><a title="" href="{{ item.link }}" class="nav-item nav-link">{{ item.title }}</a></li>
+                                    {% if request.path == item.link %}
+                                        <li class="current"><a title="" href="{{ item.link }}" class="nav-item nav-link">{{ item.title }}</a></li>
+                                    {% else %}
+                                        <li><a title="" href="{{ item.link }}" class="nav-item nav-link">{{ item.title }}</a></li>
+                                    {% endif %}
                                 {% endfor %}
 
                                 {% if request.user.is_authenticated %}
                                     <li><a href="{% url 'account_logout' %}" class="nav-item nav-link">Logout</a></li>
                                 {% else %}
-                                    <li><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>
+                                    {% if request.path == '/login/' %}
+                                        <li class="current"><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>
+                                    {% else %}
+                                        <li><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>
+                                    {% endif %}
                                 {% endif %}
                                 <li>
                                     <div class="btn-box">
-                                        <a href="/contact-us" class="theme-btn btn-style-one">Request a Demo</a>
+                                        <a href="/contact-us" class="theme-btn btn-style-one current">Request a Demo</a>
                                     </div>
                                 </li>
                             </ul>
@@ -137,7 +145,7 @@
                             {% endif %}
                             <li>
                                 <div class="btn-box">
-                                    <a href="/contact-us" class="theme-btn btn-style-one">Request a Demo</a>
+                                    <a href="/contact-us" class="theme-btn btn-style-one">Request Demo</a>
                                 </div>
                             </li>
                         </ul>

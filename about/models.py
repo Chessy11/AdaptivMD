@@ -98,14 +98,6 @@ class AboutPage(Page):
         related_name='+',
         verbose_name='Primary Image'
     )
-    vision_icon = models.ForeignKey(
-        get_image_model_string(),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        verbose_name='Icon'
-    )
     vision_description = RichTextField(
         verbose_name="Description",
         null=True,
@@ -145,7 +137,6 @@ class AboutPage(Page):
                 FieldPanel('mission_title'),
                 FieldPanel('mission_about'),
                 ImageChooserPanel('mission_image'),
-                InlinePanel('goal_block', label="Goals Block"),
             ],
             heading='Mission & Goals',
             classname="collapsible collapsed"
@@ -154,7 +145,6 @@ class AboutPage(Page):
             [
                 FieldPanel('vision_title'),
                 FieldPanel('vision_description'),
-                ImageChooserPanel('vision_icon'),
                 ImageChooserPanel('vision_image'),
             ],
             heading='Company Vision',
