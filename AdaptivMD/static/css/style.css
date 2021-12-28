@@ -10061,3 +10061,6 @@ a.ui-button:active, .ui-button:active,
     margin: 0 8px;
     color: #b0bbcb;
 }
+.gallery-photo {
+    text-align: center;
+}

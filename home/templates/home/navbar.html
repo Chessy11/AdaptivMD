@@ -65,15 +65,15 @@
                                     {% endif %}
                                 {% endfor %}
 
-                                {% if request.user.is_authenticated %}
-                                    <li><a href="{% url 'account_logout' %}" class="nav-item nav-link">Logout</a></li>
-                                {% else %}
-                                    {% if request.path == '/login/' %}
-                                        <li class="current"><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>
-                                    {% else %}
-                                        <li><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>
-                                    {% endif %}
-                                {% endif %}
+                                <!--{% if request.user.is_authenticated %}-->
+                                    <!--<li><a href="{% url 'account_logout' %}" class="nav-item nav-link">Logout</a></li>-->
+                                <!--{% else %}-->
+                                    <!--{% if request.path == '/login/' %}-->
+                                        <!--<li class="current"><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>-->
+                                    <!--{% else %}-->
+                                        <!--<li><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>-->
+                                    <!--{% endif %}-->
+                                <!--{% endif %}-->
                                 <li>
                                     <div class="btn-box">
                                         <a href="/contact-us" class="theme-btn btn-style-one current">Request a Demo</a>
@@ -142,15 +142,15 @@
                                 {% endif %}
                             {% endfor %}
 
-                            {% if request.user.is_authenticated %}
-                                <li><a href="{% url 'account_logout' %}" class="nav-item nav-link">Logout</a></li>
-                            {% else %}
-                                {% if request.path == '/login/' %}
-                                    <li class="current"><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>
-                                {% else %}
-                                    <li><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>
-                                {% endif %}
-                            {% endif %}
+                            <!--{% if request.user.is_authenticated %}-->
+                                <!--<li><a href="{% url 'account_logout' %}" class="nav-item nav-link">Logout</a></li>-->
+                            <!--{% else %}-->
+                                <!--{% if request.path == '/login/' %}-->
+                                    <!--<li class="current"><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>-->
+                                <!--{% else %}-->
+                                    <!--<li><a href="{% url 'account_login' %}" class="nav-item nav-link">Login</a></li>-->
+                                <!--{% endif %}-->
+                            <!--{% endif %}-->
                             <li>
                                 <div class="btn-box">
                                     <a href="/contact-us" class="theme-btn btn-style-one">Request Demo</a>
