@@ -94,6 +94,14 @@ class ContactPage(AbstractEmailForm):
     thank_you_text = RichTextField(blank=True)
     contact_us_title = CharField(max_length=255, verbose_name="Title", blank=True)
     contact_us_text = CharField(max_length=255, verbose_name="Contact Us Text", blank=True)
+    gallery = models.ForeignKey(
+        get_image_model_string(),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Gallery'
+    )
     description_text = RichTextField(blank=True)
 
     content_panels = AbstractEmailForm.content_panels + [
@@ -102,6 +110,7 @@ class ContactPage(AbstractEmailForm):
             FieldPanel('thank_you_text'),
             FieldPanel('contact_us_title'),
             FieldPanel('contact_us_text'),
+            ImageChooserPanel('gallery'),
             FieldPanel('description_text'),
         ],
             heading="Text Setting",

@@ -3,9 +3,12 @@
 <!-- Services Section -->
 <section class="services-section  clinician-service-section">
     <div class="auto-container">
-        <div class="set-title">
+        <div class="sec-title">
             <h2>{{ page.gallery_title }}</h2>
         </div>
+        {% if page.devices_description %}
+            <div class="text">{{ page.devices_description|richtext }}</div>
+        {% endif %}
         <div class="row clearfix">
 
             <!-- Services Block -->

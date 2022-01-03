@@ -4001,13 +4001,13 @@ img{
     font-size: 16px;
     line-height: 150%;
     margin-bottom: 24px;
-    padding-left: 40px;
+    /*padding-left: 40px;*/
     text-transform: capitalize;
     font-family: 'Poppins';
 }
 
 .main-footer .footer-widget h2:before{
-	position:absolute;
+	/*position:absolute;
 	content:'';
 
     width: 9.9px;
@@ -4017,7 +4017,7 @@ img{
     background: #FFFFFF;
     box-shadow: 0px 4px 16px rgba(255, 255, 255, 0.5);
     border-radius: 2px;
-    transform: rotate(45deg);
+    transform: rotate(45deg);*/
 }
 
 .main-footer .about-widget .text{
@@ -4140,6 +4140,25 @@ img{
 	margin-bottom:12px;
 }
 
+.main-footer .contact-widget ul li a {
+    color: #b0bbcb;
+}
+
+.main-footer .narrow {
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    text-align: center;
+    background: #272e35;
+}
+
+.main-footer .narrow .text {
+    color: #b0bbcb;
+    height: 40px;
+    line-height: 40px;
+}
 .main-footer .contact-widget ul li a:hover{
 	color:#ffffff;
 	text-decoration:underline;	

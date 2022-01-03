@@ -128,49 +128,49 @@ class DeviceGalleryBlock(models.Model):
         verbose_name='Gallery'
     )
 
-    device1 = models.ForeignKey(
-        get_image_model_string(),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        verbose_name='Device1'
-    )
-
-    device2 = models.ForeignKey(
-        get_image_model_string(),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        verbose_name='Device2'
-    )
-
-    device3 = models.ForeignKey(
-        get_image_model_string(),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        verbose_name='Device3'
-    )
-
-    device4 = models.ForeignKey(
-        get_image_model_string(),
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        verbose_name='Device4'
-    )
+    # device1 = models.ForeignKey(
+    #     get_image_model_string(),
+    #     null=True,
+    #     blank=True,
+    #     on_delete=models.SET_NULL,
+    #     related_name='+',
+    #     verbose_name='Device1'
+    # )
+    #
+    # device2 = models.ForeignKey(
+    #     get_image_model_string(),
+    #     null=True,
+    #     blank=True,
+    #     on_delete=models.SET_NULL,
+    #     related_name='+',
+    #     verbose_name='Device2'
+    # )
+    #
+    # device3 = models.ForeignKey(
+    #     get_image_model_string(),
+    #     null=True,
+    #     blank=True,
+    #     on_delete=models.SET_NULL,
+    #     related_name='+',
+    #     verbose_name='Device3'
+    # )
+    #
+    # device4 = models.ForeignKey(
+    #     get_image_model_string(),
+    #     null=True,
+    #     blank=True,
+    #     on_delete=models.SET_NULL,
+    #     related_name='+',
+    #     verbose_name='Device4'
+    # )
 
     panels = [
         FieldPanel('title'),
         ImageChooserPanel('gallery'),
-        ImageChooserPanel('device1'),
-        ImageChooserPanel('device2'),
-        ImageChooserPanel('device3'),
-        ImageChooserPanel('device4'),
+        # ImageChooserPanel('device1'),
+        # ImageChooserPanel('device2'),
+        # ImageChooserPanel('device3'),
+        # ImageChooserPanel('device4'),
     ]
 
     class Meta:
@@ -258,6 +258,12 @@ class Physician(Page):
 
     # Services
     gallery_title = CharField(max_length=255, verbose_name="Title", blank=True)
+    devices_description = RichTextField(
+        verbose_name="Highlight Text",
+        null=True,
+        blank=True,
+        default=""
+    )
 
     # Infographic
     infographic_title = CharField(max_length=255, verbose_name="Title", blank=True)
@@ -326,6 +332,7 @@ class Physician(Page):
         MultiFieldPanel(
             [
                 FieldPanel('gallery_title'),
+                FieldPanel('devices_description'),
                 InlinePanel('devicegallery_block', label="Device Gallery Block"),
             ],
             heading='Device Kits',

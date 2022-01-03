@@ -49,10 +49,20 @@
                     <div class="info-column col-lg-6 col-md-12 col-sm-12">
                         <div class="inner-column wow fadeInRight" data-wow-delay="0ms">
                             <!-- Title Box -->
-                            <div class="title-box">
+                            <div class="title-box sec-title">
                                 <h3>{{self.contact_us_text}}</h3>
-                                <div class="title-text">{{self.description_text|richtext}}</div>
                             </div>
+                            {% if self.gallery %}
+                                <figure class="image-box">
+                                    {% image self.gallery fill-570x364 as gallery %}
+                                    <img src="{{ gallery.url }}" alt="" />
+                                </figure>
+                            {% endif %}
+
+                            <div class="title-text">{{self.description_text|richtext}}</div>
+
+
+                        </div>
                             <!--<div class="contact-info-list">-->
                                 <!--<img class="icon-brand" src="{% static 'images/email_small.png' %}" />-->
                                 <!--<div>-->
@@ -60,7 +70,6 @@
                                     <!--<div class="text">{{ settings.home.GeneralSettings.email }}</div>-->
                                 <!--</div>-->
                             <!--</div>-->
-                        </div>
                     </div>
                 </div>
 

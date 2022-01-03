@@ -27,9 +27,11 @@
                                     <img src="{{ icon.url }}" alt="" />
                                 </div>
                             {% endif %}
-                            <div class="sec-title">
-                                <h3>{{ management.title }}</h3>
-                            </div>
+                            {% if management.title %}
+                                <div class="sec-title">
+                                    <h3>{{ management.title }}</h3>
+                                </div>
+                            {% endif %}
                             <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                                 <ul class="list-style-one list-left">{{ management.content|richtext }}</ul>
                             </div>
@@ -52,9 +54,11 @@
                                     <img src="{{ icon.url }}" alt="" />
                                 </div>
                             {% endif %}
-                            <div class="sec-title">
-                                <h3>{{ management.title }}</h3>
-                            </div>
+                            {% if management.title %}
+                                <div class="sec-title">
+                                    <h3>{{ management.title }}</h3>
+                                </div>
+                            {% endif %}
                             <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                                 <ul class="list-style-one list-left">{{ management.content|richtext }}</ul>
                             </div>
