@@ -10089,3 +10089,6 @@ a.ui-button:active, .ui-button:active,
 .infographic-section .image-box {
     text-align: center;
 }
+.infographic-section .set-title h3 {
+    color: #003D6D;
+}
