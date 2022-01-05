@@ -2399,6 +2399,9 @@ img{
     margin-bottom: 64px
 }
 
+.home .condition-title {
+    margin-bottom: 24px
+}
 /* About Vision Section */
 .about-vision-section  {
     font-family: Poppins;

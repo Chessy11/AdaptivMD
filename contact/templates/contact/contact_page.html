@@ -52,6 +52,7 @@
                             <div class="title-box sec-title">
                                 <h3>{{self.contact_us_text}}</h3>
                             </div>
+                            <div class="title-text">{{self.description_text|richtext}}</div>
                             {% if self.gallery %}
                                 <figure class="image-box">
                                     {% image self.gallery fill-570x364 as gallery %}
@@ -59,7 +60,7 @@
                                 </figure>
                             {% endif %}
 
-                            <div class="title-text">{{self.description_text|richtext}}</div>
+
 
 
                         </div>
