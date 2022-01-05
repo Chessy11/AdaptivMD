@@ -6,6 +6,16 @@
         <div class="set-title condition-title centered">
             <h2>{{ page.infographic_title }}</h2>
         </div>
+
+        <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+            <figure class="image-box">
+                {% if page.infographic_gallery %}
+                    {% image page.infographic_gallery fill-570x364 as image %}
+                    <img src="{{ image.url }}" alt="" />
+                {% endif %}
+            </figure>
+        </div>
+
     </div>
 </section>
 <!-- End Services Section -->

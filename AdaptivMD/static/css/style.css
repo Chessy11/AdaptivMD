@@ -10086,3 +10086,6 @@ a.ui-button:active, .ui-button:active,
 .gallery-photo {
     text-align: center;
 }
+.infographic-section .image-box {
+    text-align: center;
+}

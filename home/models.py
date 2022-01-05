@@ -197,7 +197,7 @@ class HomePage(Page):
     innovation_title1 = CharField(max_length=255, verbose_name="Innovation Title", blank=True)
     innovation_about1 = CharField(max_length=255, verbose_name="Innovation About", blank=True)
     innovation_highlight1 = RichTextField(
-        verbose_name="Hightlight Text",
+        verbose_name="Hightight Text",
         null=True,
         blank=True,
         default=""
@@ -214,7 +214,7 @@ class HomePage(Page):
     innovation_title2 = CharField(max_length=255, verbose_name="Innovation Title", blank=True)
     innovation_about2 = CharField(max_length=255, verbose_name="Innovation About", blank=True)
     innovation_highlight2 = RichTextField(
-        verbose_name="Hightlight Text",
+        verbose_name="Hightight Text",
         null=True,
         blank=True,
         default=""
@@ -232,7 +232,14 @@ class HomePage(Page):
 
     #Infographic
     infographic_title = CharField(max_length=255, verbose_name="Title", blank=True)
-
+    infographic_gallery = models.ForeignKey(
+        get_image_model_string(),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Gallery'
+    )
     #Features
     feature_title = CharField(max_length=255, verbose_name="Title", blank=True)
     feature_highlight = RichTextField(
@@ -301,6 +308,7 @@ class HomePage(Page):
         MultiFieldPanel(
             [
                 FieldPanel('infographic_title'),
+                ImageChooserPanel('infographic_gallery'),
             ],
             heading='Infographic',
             classname="collapsible collapsed"
