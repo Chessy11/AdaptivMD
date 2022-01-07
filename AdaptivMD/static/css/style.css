@@ -996,13 +996,11 @@ img{
     margin-left: auto
 }
 
-.main-menu .navigation > li:hover > a,
 .main-menu .navigation > li.current > a{
 	color: #fe714c;
 }
 
-.main-menu .navigation > li:hover:after,
-.main-menu .navigation > li.current:after{
+.main-menu .navigation > li:hover:after {
 	content: "";
     display: block;
     position: absolute;
@@ -4003,7 +4001,7 @@ img{
     color: #f8f9fb;
     font-size: 16px;
     line-height: 150%;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
     /*padding-left: 40px;*/
     text-transform: capitalize;
     font-family: 'Poppins';
@@ -4058,7 +4056,7 @@ img{
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
-	padding: 0.5rem 0;
+	padding: 0.2rem 0;
 }
 
 .footer-service-list li a:hover{
@@ -4148,19 +4146,23 @@ img{
 }
 
 .main-footer .narrow {
-    height: 40px;
-    position: absolute;
+    height: 60px;
     bottom: 0;
     width: 100%;
     display: block;
     text-align: center;
-    background: #272e35;
+    background: linear-gradient(90deg, #272e35, transparent);
+    border-top: 1px solid #4d555d;
 }
 
 .main-footer .narrow .text {
     color: #b0bbcb;
-    height: 40px;
-    line-height: 40px;
+    height: 60px;
+    line-height: 60px;
+}
+
+.main-footer .narrow a {
+    color: #b0bbcb;
 }
 .main-footer .contact-widget ul li a:hover{
 	color:#ffffff;
@@ -9875,7 +9877,7 @@ a.ui-button:active, .ui-button:active,
 }
 
 .features-section-two.alternate{
-	padding-bottom: 80px;
+	padding-bottom: 22px;
 }
 
 .feature-block-seven{

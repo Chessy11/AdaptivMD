@@ -12,7 +12,7 @@
             <div class="row clearfix">
 
                 <!--big column-->
-                <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                <div class="big-column col-lg-4 col-md-12 col-sm-12">
                     <div class="row clearfix">
 
                         <!--Footer Column-->
@@ -40,14 +40,14 @@
                 </div>
 
                 <!--big column-->
-                <div class="big-column col-lg-3 col-md-12 col-sm-12">
+                <div class="big-column col-lg-4 col-md-12 col-sm-12">
                     <div class="row clearfix">
                         <div class="footer-column col-lg-12 col-md-12 col-sm-12">
                             <div class="footer-widget services-widget">
                                 <h2>Quck Links</h2>
                                 <ul class="footer-service-list">
                                     {% for item in navigation.menu_items.all %}
-                                            <li><a title="" href="{{ item.link }}" class="nav-item nav-link">{{ item.title }}</a></li>
+                                        <li><a title="" href="{{ item.link }}" class="nav-item nav-link">{{ item.title }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -57,48 +57,22 @@
                 </div>
 
                 <!--big column-->
-                <div class="big-column col-lg-3 col-md-12 col-sm-12">
+                <div class="big-column col-lg-4 col-md-12 col-sm-12">
                     <div class="row clearfix">
 
                         <!--Footer Column-->
                         <div class="footer-column col-lg-12 col-md-12 col-sm-12">
                             <div class="footer-widget contact-widget">
                                 <h2>Contact</h2>
-                                <!--<div class="number">{{ settings.home.GeneralSettings.phone }}</div>-->
                                 <ul>
-                                    <!--<li>{{ settings.home.GeneralSettings.office_address }}</li>-->
                                     <li><a href="/contact-us">Schedule a Live Demo</a></li>
                                     <li><a href="/contact-us">Receive a FREE Care Kit</a></li>
-                                    <!--<li>{{ settings.home.GeneralSettings.working_hours }}</li>-->
                                 </ul>
                             </div>
                         </div>
 
                     </div>
                 </div>
-
-                <!--big column-->
-                <!--<div class="big-column col-lg-3 col-md-12 col-sm-12">-->
-                    <!--<div class="row clearfix">-->
-
-                        <!--&lt;!&ndash;Footer Column&ndash;&gt;-->
-                        <!--<div class="footer-column col-lg-12 col-md-12 col-sm-12">-->
-                            <!--<div class="footer-widget contact-widget">-->
-                                <!--<h2>FOLLOW US</h2>-->
-                                <!--<ul class="social-links">-->
-                                    <!--<li><a href="{{ settings.home.GeneralSettings.facebook }}"><span class="fab fa-facebook-f"></span></a></li>-->
-                                    <!--<li><a href="{{ settings.home.GeneralSettings.twitter }}"><span class="fab fa-twitter"></span></a></li>-->
-                                    <!--<li><a href="{{ settings.home.GeneralSettings.youtube }}"><span class="fab fa-youtube"></span></a></li>-->
-                                <!--</ul>-->
-                            <!--</div>-->
-                        <!--</div>-->
-
-                    <!--</div>-->
-                    <!--<div class="pull-left">-->
-						<!--<div class="copyright">{{ settings.home.GeneralSettings.copyright }}</div>-->
-					<!--</div>-->
-                <!--</div>-->
-
             </div>
 
         </div>
