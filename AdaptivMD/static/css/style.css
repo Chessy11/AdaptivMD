@@ -1531,7 +1531,6 @@ img{
 	transition: all 300ms ease;
 }
 
-.sticky-header .main-menu .navigation > li:hover > a,
 .sticky-header .main-menu .navigation > li.current > a,
 .sticky-header .main-menu .navigation > li.current-menu-item > a{
 	opacity:1;
