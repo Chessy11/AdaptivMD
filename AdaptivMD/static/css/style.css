@@ -4480,6 +4480,11 @@ img{
 .contact-page-section .btn-style-five {
     background-color: #fe714c;
 }
+
+.contact-page-section .info-column .image-box{
+    margin-top: 60px!important;
+}
+
 /* Contact Info List */
 
 .contact-info-list{
@@ -9862,7 +9867,7 @@ a.ui-button:active, .ui-button:active,
 
 .features-section-two{
 	position: relative;
-	padding-top: 100px;
+	padding-top: 80px;
 }
 
 .features-section-two .set-title {
@@ -9882,12 +9887,12 @@ a.ui-button:active, .ui-button:active,
 }
 
 .features-section-two.alternate{
-	padding-bottom: 50px;
+	padding-bottom: 40px;
 }
 
 .feature-block-seven{
 	position: relative;
-	margin-bottom: 50px;
+	margin-bottom: 40px;
 }
 
 .feature-block-seven .contactus-btn {
