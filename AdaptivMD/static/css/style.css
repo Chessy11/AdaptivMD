@@ -2607,6 +2607,9 @@ img{
     justify-content: center;
 }
 
+.clinician-outcome-section {
+    margin-top: 50px;
+}
 .clinician-outcome-section .conditions-block {
     display: flex;
     align-items: center;
@@ -9879,7 +9882,7 @@ a.ui-button:active, .ui-button:active,
 }
 
 .features-section-two.alternate{
-	padding-bottom: 30px;
+	padding-bottom: 50px;
 }
 
 .feature-block-seven{
