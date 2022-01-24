@@ -2,29 +2,31 @@
 
 <!-- Fluid Section One -->
 <section class="features-section-two alternate about-vision-section">
-    <div class="auto-container">
-        <!-- Feature Block Seven -->
-        <div class="row clearfix">
-            <div class="col-lg-6 col-md-12 col-sm-12">
-                <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <figure class="image-box">
-                        {% if page.vision_image %}
-                            {% image page.vision_image fill-570x364 as image %}
-                            <img src="{{ image.url }}" alt="" />
-                        {% endif %}
-                    </figure>
-                </div>
-            </div>
-            <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    {% if page.vision_icon %}
-                        {% image page.vision_icon fill-60x60 as icon %}
-                        <img class="icon-brand" src="{{ icon.url }}" alt="" />
-                    {% endif %}
-                    <div class="sec-title">
-                        <h2>{{ page.vision_title }}</h2>
+    <div class="feature-block-seven style-two">
+        <div class="auto-container">
+            <!-- Feature Block Seven -->
+            <div class="row clearfix">
+                <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <figure class="image-box">
+                            {% if page.vision_image %}
+                                {% image page.vision_image fill-570x364 as image %}
+                                <img src="{{ image.url }}" alt="" />
+                            {% endif %}
+                        </figure>
                     </div>
-                    <div class="text"><ul class="list-style-one list-left">{{ page.vision_description|richtext }}</ul></div>
+                </div>
+                <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        {% if page.vision_icon %}
+                            {% image page.vision_icon fill-60x60 as icon %}
+                            <img class="icon-brand" src="{{ icon.url }}" alt="" />
+                        {% endif %}
+                        <div class="sec-title">
+                            <h2>{{ page.vision_title }}</h2>
+                        </div>
+                        <div class="text"><ul class="list-style-one list-left">{{ page.vision_description|richtext }}</ul></div>
+                    </div>
                 </div>
             </div>
         </div>
