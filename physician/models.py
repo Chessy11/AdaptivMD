@@ -267,6 +267,14 @@ class Physician(Page):
 
     # Infographic
     infographic_title = CharField(max_length=255, verbose_name="Title", blank=True)
+    infographic_gallery = models.ForeignKey(
+        get_image_model_string(),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Gallery'
+    )
 
     # Features
     feature_title = CharField(max_length=255, verbose_name="Title", blank=True)
@@ -341,6 +349,7 @@ class Physician(Page):
         MultiFieldPanel(
             [
                 FieldPanel('infographic_title'),
+                ImageChooserPanel('infographic_gallery'),
             ],
             heading='Infographic',
             classname="collapsible collapsed"
