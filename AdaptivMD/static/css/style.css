@@ -2604,10 +2604,12 @@ img{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 40px;
 }
 
 .clinician-outcome-section {
     margin-top: 50px;
+    margin-bottom: 70px;
 }
 .clinician-outcome-section .conditions-block {
     display: flex;
