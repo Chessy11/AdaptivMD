@@ -56,13 +56,25 @@
                         </div>
                         <div class="text">{{ page.innovation_highlight2|richtext }}</div>
                         <!--Video Box-->
-                        <div class="contactus-btn">
-                            <a href="{{ page.video_url }}" class="lightbox-image play-box">Play now&nbsp;&nbsp;<span class="icon-outer"><i class="fa fa-play" aria-hidden="true"></i></span></a>
-                        </div>
+                        <!--<div class="contactus-btn">-->
+                            <!--<a href="{{ page.video_url }}" class="lightbox-image play-box">Play now&nbsp;&nbsp;<span class="icon-outer"><i class="fa fa-play" aria-hidden="true"></i></span></a>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
         </div>
+        <div class="feature-block-seven">
+            <div class="row clearfix">
+                <div class="videoWrapper">
+                    <iframe width="560" height="349" src="{{ page.video_url }}"
+                            title="AdaptivMD Video"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <div class="feature-block-seven" />
     </div>
 </section>
 <!--End Features Section Two -->
