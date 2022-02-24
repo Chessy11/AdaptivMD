@@ -37,12 +37,15 @@
             <div class="row clearfix">
                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <figure class="image-box">
-                            {% if page.innovation_image2 %}
-                                {% image page.innovation_image2 fill-570x364 as image2 %}
-                                <img src="{{ image2.url }}" alt="" />
+                        <div class="videoWrapper">
+                            {% if page.video_url %}
+                                <iframe width="560" height="349" src="{{ page.video_url }}"
+                                        title="{{ page.video_title|richtext }}"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                </iframe>
                             {% endif %}
-                        </figure>
+                        </div>
                     </div>
                 </div>
                 <div class="content-column col-lg-6 col-md-12 col-sm-12">
@@ -55,26 +58,10 @@
                             <h2>{{ page.innovation_about2 }}</h2>
                         </div>
                         <div class="text">{{ page.innovation_highlight2|richtext }}</div>
-                        <!--Video Box-->
-                        <!--<div class="contactus-btn">-->
-                            <!--<a href="{{ page.video_url }}" class="lightbox-image play-box">Play now&nbsp;&nbsp;<span class="icon-outer"><i class="fa fa-play" aria-hidden="true"></i></span></a>-->
-                        <!--</div>-->
                     </div>
                 </div>
             </div>
         </div>
-        <div class="feature-block-seven">
-            <div class="row clearfix">
-                <div class="videoWrapper">
-                    <iframe width="560" height="349" src="{{ page.video_url }}"
-                            title="AdaptivMD Video"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        </div>
-        <div class="feature-block-seven" />
     </div>
 </section>
 <!--End Features Section Two -->
